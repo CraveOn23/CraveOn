@@ -75,31 +75,15 @@ export default function Home() {
   const [customerName, setCustomerName] = useState("");
   const [customerPhone, setCustomerPhone] = useState("");
   const [customerAddress, setCustomerAddress] = useState("");
-  const [deliveryZone, setDeliveryZone] = useState("within5");
   const [orderPlaced, setOrderPlaced] = useState(false);
-
-  const deliveryFee = deliveryZone === "over5" ? 50 : 0;
 
   const updateQuantity = (itemName, price, change, category) => {
     setCart((prev) => {
-      const currentItem = prev[itemName] || {
-        price,
-        quantity: 0,
-        category,
-        addOns: {},
-      };
+      const currentItem = prev[itemName] || { price, quantity: 0, category, addOns: {} };
       const newQty = Math.max(0, currentItem.quantity + change);
       const updated = { ...prev };
-
       if (newQty === 0) delete updated[itemName];
-      else {
-        updated[itemName] = {
-          ...currentItem,
-          price,
-          quantity: newQty,
-          category,
-        };
-      }
+      else updated[itemName] = { ...currentItem, price, quantity: newQty, category };
       return updated;
     });
   };
@@ -108,74 +92,39 @@ export default function Home() {
     setCart((prev) => {
       const currentItem = prev[itemName];
       if (!currentItem) return prev;
-
       const updatedAddOns = { ...(currentItem.addOns || {}) };
       if (updatedAddOns[addonName]) delete updatedAddOns[addonName];
       else updatedAddOns[addonName] = { price: addonPrice };
-
-      return {
-        ...prev,
-        [itemName]: { ...currentItem, addOns: updatedAddOns },
-      };
+      return { ...prev, [itemName]: { ...currentItem, addOns: updatedAddOns } };
     });
   };
 
   const cartItems = Object.entries(cart);
-
-  const totalQuantity = cartItems.reduce(
-    (total, [, item]) => total + item.quantity,
-    0
-  );
-
+  const totalQuantity = cartItems.reduce((total, [, item]) => total + item.quantity, 0);
   const foodTotal = cartItems.reduce((total, [, item]) => {
     const itemBaseTotal = item.price * item.quantity;
-    const itemAddOnTotal = Object.values(item.addOns || {}).reduce(
-      (sum, addon) => sum + addon.price * item.quantity,
-      0
-    );
+    const itemAddOnTotal = Object.values(item.addOns || {}).reduce((sum, addon) => sum + addon.price * item.quantity, 0);
     return total + itemBaseTotal + itemAddOnTotal;
   }, 0);
 
-  const totalAmount = foodTotal + deliveryFee;
-
   const placeOrder = () => {
-    if (totalQuantity === 0) {
-      alert("Please select at least one item.");
-      return;
-    }
-    if (!customerName.trim()) {
-      alert("Please enter your name.");
-      return;
-    }
-
+    if (totalQuantity === 0) return alert("Please select at least one item.");
+    if (!customerName.trim()) return alert("Please enter your name.");
     const cleanPhone = customerPhone.replace(/\D/g, "");
-    if (cleanPhone.length !== 10) {
-      alert("Please enter a valid 10-digit mobile number.");
-      return;
-    }
-    if (customerAddress.trim().length < 10) {
-      alert("Please enter your complete delivery address.");
-      return;
-    }
+    if (cleanPhone.length !== 10) return alert("Please enter a valid 10-digit mobile number.");
+    if (customerAddress.trim().length < 10) return alert("Please enter your complete delivery address.");
 
-    const orderDetails = cartItems
-      .map(([name, item]) => {
-        let details = `${item.quantity} × ${name} = ₹${item.price * item.quantity}`;
-        Object.entries(item.addOns || {}).forEach(([addonName, addon]) => {
-          details += `\n   + ${addonName} × ${item.quantity} = ₹${addon.price * item.quantity}`;
-        });
-        return details;
-      })
-      .join("\n\n");
+    const orderDetails = cartItems.map(([name, item]) => {
+      let details = `${item.quantity} × ${name} = ₹${item.price * item.quantity}`;
+      Object.entries(item.addOns || {}).forEach(([addonName, addon]) => {
+        details += `\n   + ${addonName} × ${item.quantity} = ₹${addon.price * item.quantity}`;
+      });
+      return details;
+    }).join("\n\n");
 
-    const deliveryText = deliveryFee === 0
-      ? "0–5 KM — FREE"
-      : "5 KM+ — ₹50";
+    const message = `🛒 *CRAVEON THE CLOUD KITCHEN*\n\n👤 *Customer:* ${customerName.trim()}\n📱 *Phone:* ${cleanPhone}\n📍 *Address:* ${customerAddress.trim()}\n\n*ORDER DETAILS*\n\n${orderDetails}\n\n💵 *Food Total:* ₹${foodTotal}\n🚚 *Delivery Charge:* To be confirmed based on delivery location\n\n------------------------\n🧾 *Total Items:* ${totalQuantity}\n💰 *FOOD TOTAL:* ₹${foodTotal}\n\nThank you for ordering from *CraveOn* ❤️`;
 
-    const message = `🛒 *CRAVEON THE CLOUD KITCHEN*\n\n👤 *Customer:* ${customerName.trim()}\n📱 *Phone:* ${cleanPhone}\n📍 *Address:* ${customerAddress.trim()}\n\n*ORDER DETAILS*\n\n${orderDetails}\n\n🚚 *Delivery:* ${deliveryText}\n💵 *Food Total:* ₹${foodTotal}\n🚚 *Delivery Fee:* ₹${deliveryFee}\n\n------------------------\n🧾 *Total Items:* ${totalQuantity}\n💰 *TOTAL AMOUNT:* ₹${totalAmount}\n\nThank you for ordering from *CraveOn* ❤️`;
-
-    const whatsappNumber = "919079540030";
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/919079540030?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, "_blank");
 
     setSelectedSpecial(null);
@@ -183,7 +132,6 @@ export default function Home() {
     setCustomerName("");
     setCustomerPhone("");
     setCustomerAddress("");
-    setDeliveryZone("within5");
     setOrderPlaced(true);
   };
 
@@ -191,27 +139,19 @@ export default function Home() {
     <main className="hero">
       <nav className="navbar">
         <div className="logo">
-          <Image
-            src="/images/CraveOn The Cloud Kitchen.png"
-            alt="CraveOn Logo"
-            width={120}
-            height={60}
-            className="brand-logo"
-          />
+          <Image src="/images/CraveOn The Cloud Kitchen.png" alt="CraveOn Logo" width={120} height={60} className="brand-logo" />
         </div>
         <div className="nav-links">
           <a href="#home">Home</a>
           <a href="#menu">Menu</a>
-          <a href="#categories">Categories</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
 
-      {/* ================= BANNER SLIDER ================= */}
       <section id="home" className="banner-slider" aria-label="CraveOn offers">
         <div className="banner-slide banner-slide-one">
-          <Image src="/images/banner.png" alt="CraveOn fresh food" fill priority className="banner-slide-image" />
+          <Image src="/images/banner-coffee.svg" alt="CraveOn cold coffee" fill priority className="banner-slide-image" />
           <div className="banner-slide-overlay" />
           <div className="banner-slide-content">
             <span>CRAVEON • THE CLOUD KITCHEN</span>
@@ -221,7 +161,7 @@ export default function Home() {
           </div>
         </div>
         <div className="banner-slide banner-slide-two">
-          <Image src="/images/banner.png" alt="CraveOn shakes and cold coffee" fill className="banner-slide-image" />
+          <Image src="/images/banner-drinks.svg" alt="CraveOn shakes and mocktails" fill className="banner-slide-image" />
           <div className="banner-slide-overlay" />
           <div className="banner-slide-content">
             <span>COFFEE • SHAKES • MOCKTAILS</span>
@@ -231,7 +171,7 @@ export default function Home() {
           </div>
         </div>
         <div className="banner-slide banner-slide-three">
-          <Image src="/images/banner.png" alt="CraveOn Maggi and sandwiches" fill className="banner-slide-image" />
+          <Image src="/images/banner-food.svg" alt="CraveOn Maggi and sandwiches" fill className="banner-slide-image" />
           <div className="banner-slide-overlay" />
           <div className="banner-slide-content">
             <span>MAGGI • SANDWICHES</span>
@@ -248,14 +188,7 @@ export default function Home() {
         <p className="section-intro">Tap a category to see the full menu and build your order.</p>
         <div className="card-container">
           {categories.map((category) => (
-            <div
-              className="card"
-              key={category.name}
-              onClick={() => setSelectedSpecial(category.name)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === "Enter" && setSelectedSpecial(category.name)}
-            >
+            <div className="card" key={category.name} onClick={() => setSelectedSpecial(category.name)} role="button" tabIndex={0} onKeyDown={(e) => e.key === "Enter" && setSelectedSpecial(category.name)}>
               <div className="icon">{category.icon}</div>
               <h3>{category.name}</h3>
               <p>{category.text}</p>
@@ -265,35 +198,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= CATEGORIES ================= */}
-      <section id="categories" className="categories-section">
-        <div className="section-kicker">QUICK PICK</div>
-        <h2>Categories</h2>
-        <div className="category-pills">
-          {categories.map((category) => (
-            <button key={category.name} onClick={() => setSelectedSpecial(category.name)}>
-              <span>{category.icon}</span>
-              {category.name}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= EXPRESS DELIVERY ================= */}
-      <section className="delivery-section">
-        <div className="delivery-icon">🚴</div>
-        <div>
-          <div className="section-kicker">EXPRESS DELIVERY</div>
-          <h2>Freshness at your doorstep</h2>
-          <p>Delivery within <strong>5 KM is FREE</strong>. For locations beyond 5 KM, a flat <strong>₹50 delivery fee</strong> applies.</p>
-        </div>
-        <div className="delivery-badges">
-          <span>0–5 KM <strong>FREE</strong></span>
-          <span>5 KM+ <strong>₹50</strong></span>
-        </div>
-      </section>
-
-      {/* ================= ORDER POPUP ================= */}
       {selectedSpecial && (
         <div className="order-overlay" onClick={() => setSelectedSpecial(null)}>
           <div className="order-popup" onClick={(e) => e.stopPropagation()}>
@@ -306,31 +210,21 @@ export default function Home() {
                 const quantity = cart[item.name]?.quantity || 0;
                 const selectedAddOns = cart[item.name]?.addOns || {};
                 const addOns = selectedSpecial === "Maggi" ? maggiAddOns : selectedSpecial === "Sandwich" ? sandwichAddOns : [];
-
                 return (
                   <div className="order-item" key={item.name}>
-                    <div className="order-item-info">
-                      <h3>{item.name}</h3>
-                      <p>₹{item.price}</p>
-                    </div>
+                    <div className="order-item-info"><h3>{item.name}</h3><p>₹{item.price}</p></div>
                     <div className="quantity-box">
                       <button onClick={() => updateQuantity(item.name, item.price, -1, selectedSpecial)}>−</button>
                       <span>{quantity}</span>
                       <button onClick={() => updateQuantity(item.name, item.price, 1, selectedSpecial)}>+</button>
                     </div>
-
                     {addOns.length > 0 && quantity > 0 && (
                       <div className="item-addons">
                         <p>Add-on for <strong>{item.name}</strong></p>
                         {addOns.map((addon) => (
                           <label className="item-addon-option" key={addon.name}>
-                            <input
-                              type="checkbox"
-                              checked={!!selectedAddOns[addon.name]}
-                              onChange={() => toggleItemAddOn(item.name, addon.name, addon.price)}
-                            />
-                            <span>{addon.name}</span>
-                            <strong>+₹{addon.price}</strong>
+                            <input type="checkbox" checked={!!selectedAddOns[addon.name]} onChange={() => toggleItemAddOn(item.name, addon.name, addon.price)} />
+                            <span>{addon.name}</span><strong>+₹{addon.price}</strong>
                           </label>
                         ))}
                       </div>
@@ -350,9 +244,7 @@ export default function Home() {
                       <div className="your-order-row" key={name}>
                         <div className="your-order-name">
                           <span>{name}</span>
-                          {Object.keys(item.addOns || {}).length > 0 && (
-                            <small>{Object.keys(item.addOns).join(", ")}</small>
-                          )}
+                          {Object.keys(item.addOns || {}).length > 0 && <small>{Object.keys(item.addOns).join(", ")}</small>}
                         </div>
                         <div className="your-order-controls">
                           <button onClick={() => updateQuantity(name, item.price, -1, item.category)}>−</button>
@@ -374,26 +266,11 @@ export default function Home() {
                 <input type="text" placeholder="Your Name" value={customerName} onChange={(e) => setCustomerName(e.target.value)} />
                 <input type="tel" placeholder="Mobile Number" value={customerPhone} onChange={(e) => setCustomerPhone(e.target.value)} />
                 <textarea placeholder="Delivery Address" value={customerAddress} onChange={(e) => setCustomerAddress(e.target.value)} rows={3} />
-
-                <div className="delivery-choice">
-                  <h4>Express Delivery</h4>
-                  <label>
-                    <input type="radio" name="deliveryZone" checked={deliveryZone === "within5"} onChange={() => setDeliveryZone("within5")} />
-                    <span>Within 5 KM</span>
-                    <strong>FREE</strong>
-                  </label>
-                  <label>
-                    <input type="radio" name="deliveryZone" checked={deliveryZone === "over5"} onChange={() => setDeliveryZone("over5")} />
-                    <span>More than 5 KM</span>
-                    <strong>+₹50</strong>
-                  </label>
-                </div>
+                <p style={{ margin: "4px 0 0", color: "#777", fontSize: "13px" }}>Delivery charges will be confirmed according to your delivery location.</p>
               </div>
-
               <div><span>Items</span><strong>{totalQuantity}</strong></div>
               <div><span>Food Total</span><strong>₹{foodTotal}</strong></div>
-              <div><span>Delivery</span><strong>{deliveryFee === 0 ? "FREE" : "₹50"}</strong></div>
-              <div className="grand-total"><span>Total</span><strong>₹{totalAmount}</strong></div>
+              <div className="grand-total"><span>Total</span><strong>₹{foodTotal}</strong></div>
             </div>
 
             <button className="place-order-btn" disabled={totalQuantity === 0} onClick={placeOrder}>Place Order on WhatsApp</button>
@@ -407,7 +284,7 @@ export default function Home() {
             <div className="success-icon">✓</div>
             <h2>Order Sent Successfully!</h2>
             <p>Thank you for ordering from <strong>CraveOn</strong> ❤️</p>
-            <p className="success-text">Your order details have been sent to us on WhatsApp. We will contact you shortly to confirm your order.</p>
+            <p className="success-text">Your order details have been sent to us on WhatsApp. We will contact you shortly to confirm your order and delivery charge.</p>
             <button className="success-close-btn" onClick={() => setOrderPlaced(false)}>Done</button>
           </div>
         </div>
@@ -436,7 +313,7 @@ export default function Home() {
           <div className="footer-logo"><Image src="/images/CraveOn The Cloud Kitchen ( White ).png" alt="CraveOn Logo" width={180} height={80} className="footer-brand-logo" /></div>
           <p>Crave More, Live More</p>
           <p>Fresh Food • Fast Delivery • Cloud Kitchen</p>
-          <div className="footer-links"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#categories">Categories</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+          <div className="footer-links"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">About</a><a href="#contact">Contact</a></div>
           <div className="footer-line"></div>
           <p className="copyright">© 2026 CraveOn. All Rights Reserved.</p>
         </div>
