@@ -295,13 +295,14 @@ body {
   margin-bottom: 18px;
   color: #111;
 }
-.section-subtitle {
+.section-intro {
   font-size: 16px;
   color: #666;
-  margin-top: 0;
+  margin-top: -18px;
   margin-bottom: 45px;
-  line-height: 1.5;
+  
 }
+
 
 /* Cards Container */
 
