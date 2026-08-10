@@ -246,56 +246,8 @@ export default function Home() {
           OUR SPECIALS
       ===================================================== */}
 
-      <section className="special-section">
-
-        <h2>
-  Choose Your Craving
-</h2>
-
-<p className="section-subtitle">
-  Tap a category to see the full menu and build your order.
-</p>
-
-
-        <div className="card-container">
-
-
-          {/* COLD COFFEE */}
-
-          <div
-            className="card"
-            onClick={() =>
-              setSelectedSpecial(
-                "Cold Coffee"
-              )
-            }
-            style={{
-              cursor: "pointer",
-            }}
-          >
-
-            <div className="icon">
-              ☕
-            </div>
-
-            <h3>
-              Cold Coffee
-            </h3>
-
-            <p>
-              Classic, Irish, Hazelnut,
-              Caramel & More
-            </p>
-
-            <span>
-              Starting ₹79
-            </span>
-
-          </div>
-        </div>
-      </section>
-
-      <section id="menu" className="special-section">
+     
+           <section id="menu" className="special-section">
         <div className="section-kicker">OUR MENU</div>
         <h2>Choose Your Craving</h2>
         <p className="section-intro">Tap a category to see the full menu and build your order.</p>
