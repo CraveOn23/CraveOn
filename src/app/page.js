@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
@@ -97,6 +97,24 @@ export default function Home() {
   /* =========================================================
      STATES
   ========================================================= */
+const banners = [
+  "/images/banner-1.jpg",
+  "/images/banner-2.jpg",
+  "/images/banner-3.jpg",
+  "/images/banner-4.jpg",
+];
+
+const [currentBanner, setCurrentBanner] = useState(0);
+
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentBanner((prev) =>
+      (prev + 1) % banners.length
+    );
+  }, 5000);
+
+  return () => clearInterval(interval);
+}, []);
 
   const [selectedSpecial, setSelectedSpecial] = useState(null);
 
@@ -518,68 +536,168 @@ Thank you for ordering from *CraveOn* ❤️`;
 
 
       {/* =====================================================
-          BANNER + HERO
-      ===================================================== */}
+    BANNER SLIDER
+===================================================== */}
 
-      <section
-        id="home"
-        className="hero-section"
-      >
+<section
+  id="home"
+  className="hero-section"
+>
 
-        <div className="banner-section">
+  <div
+    className="banner-section"
+    style={{
+      position: "relative",
+      width: "100%",
+      overflow: "hidden",
+      lineHeight: 0,
+    }}
+  >
 
-          <Image
-            src="/images/banner.png"
-            alt="CraveOn Cloud Kitchen"
-            width={1920}
-            height={700}
-            className="banner"
-            priority
-          />
+    {/* BANNER IMAGE */}
 
-        </div>
-
-
-
-        {/* HERO TEXT */}
-
-        <div className="hero-text">
-
-          <div className="hero-logo">
-
-            <Image
-              src="/images/CraveOn The Cloud Kitchen.png"
-              alt="CraveOn Logo"
-              width={220}
-              height={100}
-              className="hero-brand-logo"
-            />
-
-          </div>
+    <Image
+      src={banners[currentBanner]}
+      alt={`CraveOn Banner ${currentBanner + 1}`}
+      width={1920}
+      height={700}
+      className="banner"
+      priority
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+        objectFit: "cover",
+      }}
+    />
 
 
-          <p>
-            Crave More, Live More
-          </p>
+    {/* =================================================
+        LEFT ARROW
+    ================================================= */}
+
+    <button
+      type="button"
+      aria-label="Previous banner"
+      onClick={() =>
+        setCurrentBanner(
+          (currentBanner - 1 + banners.length) %
+            banners.length
+        )
+      }
+      style={{
+        position: "absolute",
+        left: "20px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        width: "45px",
+        height: "45px",
+        borderRadius: "50%",
+        border: "none",
+        background: "rgba(255,255,255,0.85)",
+        color: "#222",
+        fontSize: "30px",
+        lineHeight: "1",
+        cursor: "pointer",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+      }}
+    >
+      ‹
+    </button>
 
 
-          <h3>
-            Fresh Food • Fast Delivery • Cloud Kitchen
-          </h3>
+    {/* =================================================
+        RIGHT ARROW
+    ================================================= */}
+
+    <button
+      type="button"
+      aria-label="Next banner"
+      onClick={() =>
+        setCurrentBanner(
+          (currentBanner + 1) %
+            banners.length
+        )
+      }
+      style={{
+        position: "absolute",
+        right: "20px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        width: "45px",
+        height: "45px",
+        borderRadius: "50%",
+        border: "none",
+        background: "rgba(255,255,255,0.85)",
+        color: "#222",
+        fontSize: "30px",
+        lineHeight: "1",
+        cursor: "pointer",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+      }}
+    >
+      ›
+    </button>
 
 
-          <a
-            href="https://wa.me/919079540030?text=Hi%20CraveOn%2C%20I%20want%20to%20place%20an%20order."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            🍔 Order Now
-          </a>
+    {/* =================================================
+        DOTS
+    ================================================= */}
 
-        </div>
+    <div
+      style={{
+        position: "absolute",
+        bottom: "18px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        display: "flex",
+        gap: "9px",
+        zIndex: 10,
+      }}
+    >
 
-      </section>
+      {banners.map((_, index) => (
+
+        <button
+          key={index}
+          type="button"
+          aria-label={`Go to banner ${index + 1}`}
+          onClick={() =>
+            setCurrentBanner(index)
+          }
+          style={{
+            width:
+              currentBanner === index
+                ? "28px"
+                : "10px",
+            height: "10px",
+            padding: 0,
+            borderRadius: "20px",
+            border: "none",
+            cursor: "pointer",
+            background:
+              currentBanner === index
+                ? "#ffffff"
+                : "rgba(255,255,255,0.55)",
+            transition: "all 0.3s ease",
+          }}
+        />
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
 
 
 

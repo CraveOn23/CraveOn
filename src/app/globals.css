@@ -135,14 +135,15 @@ body {
 
 .banner-section {
   width: 100%;
-  position: relative;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .banner {
-  width: 100% !important;
-  height: 600px !important;
-  object-fit: cover;
+  width: 100%;
+  height: auto !important;
   display: block;
+  object-fit: cover;
 }
 
 
@@ -1711,4 +1712,15 @@ body {
 
 .addon-option strong {
   font-size: 14px;
+}@media (max-width: 768px) {
+
+  .banner-section {
+    width: 100%;
+  }
+
+  .banner {
+    width: 100%;
+    height: auto !important;
+  }
+
 }
