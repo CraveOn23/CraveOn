@@ -251,6 +251,8 @@ body {
 
   box-shadow: 0 10px 24px rgba(255, 90, 31, 0.32);
 }
+
+
 /* ================= OUR MENU ================= */
 
 .menu-section {
@@ -282,25 +284,61 @@ body {
 }
 
 
-/* ================= OUR SPECIALS ================= */
+/* ================= OUR SPECIALS / CATEGORY MENU ================= */
 
 .special-section {
-  padding: 80px 20px;
+  padding: 70px 20px 80px;
   text-align: center;
   background: #f8f8f8;
 }
 
+
+/* OUR MENU */
+
+.special-section .section-subtitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* Choose Your Craving */
+
 .special-section h2 {
   font-size: 40px;
-  margin-bottom: 18px;
+
+  margin-top: 0;
+  margin-bottom: 8px;
+
   color: #111;
+
+  font-weight: 700;
 }
-.section-intro {
+
+
+/* Tap a category... */
+
+.special-section .section-intro {
   font-size: 16px;
+
   color: #666;
-  margin-top: -18px;
-  margin-bottom: 45px;
-  
+
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  line-height: 1.5;
+}
+
+
+/* Extra support if OUR MENU is a normal <p> */
+
+.special-section > p:first-child {
+  margin-top: 0;
 }
 
 
@@ -308,10 +346,13 @@ body {
 
 .card-container {
   max-width: 1100px;
+
   margin: 0 auto;
-  margin-top: 0;
+
   display: flex;
+
   justify-content: center;
+
   gap: 18px;
 
   flex-wrap: wrap;
@@ -327,8 +368,11 @@ body {
   padding: 30px 20px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
@@ -336,6 +380,7 @@ body {
   background: #ffffff;
 
   border: 1px solid #eeeeee;
+
   border-radius: 18px;
 
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
@@ -363,6 +408,7 @@ body {
   height: 65px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -402,7 +448,7 @@ body {
 }
 
 
-/* Price */
+/* Price / View Items */
 
 .card span {
   display: block;
@@ -422,33 +468,60 @@ body {
 @media (max-width: 768px) {
 
   .special-section {
-    padding: 60px 15px;
+    padding: 55px 15px 65px;
   }
+
+
+  .special-section .section-subtitle {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
 
   .special-section h2 {
     font-size: 30px;
-    margin-bottom: 35px;
+
+    margin-bottom: 8px;
   }
+
+
+  .special-section .section-intro {
+    font-size: 14px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+  }
+
 
   .card-container {
     gap: 15px;
   }
 
+
   .card {
     width: 170px;
+
     min-height: 210px;
+
     padding: 25px 15px;
   }
+
 
   .icon {
     width: 58px;
     height: 58px;
+
     font-size: 34px;
   }
+
 
   .card h3 {
     font-size: 17px;
   }
+
 
   .card p {
     font-size: 12px;
@@ -461,21 +534,27 @@ body {
 
 .about-section {
   padding: 85px 20px;
+
   text-align: center;
+
   background: #ffffff;
 }
 
 .about-section h2 {
   font-size: 40px;
+
   margin-bottom: 30px;
+
   color: #111111;
 }
 
 .about-section p {
   max-width: 850px;
+
   margin: 0 auto 18px;
 
   font-size: 17px;
+
   line-height: 1.8;
 
   color: #555555;
@@ -496,15 +575,18 @@ body {
 
   .about-section h2 {
     font-size: 30px;
+
     margin-bottom: 25px;
   }
 
   .about-section p {
     font-size: 15px;
+
     line-height: 1.7;
   }
 
 }
+
 
 /* ================= PREMIUM CONTACT US ================= */
 
@@ -542,7 +624,7 @@ body {
 
   max-width: 1100px;
 
-  margin: 0 auto;
+  margin: 40px auto;
 
   padding: 0 20px;
 
@@ -551,34 +633,24 @@ body {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   gap: 20px;
-}
-
-
-/* ================= CONTACT CARDS ================= */
-
-.contact-container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 0 20px;
-
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
 
   align-items: stretch;
 }
 
 
-/* Individual card */
+/* ================= CONTACT CARDS ================= */
 
 .contact-card {
   width: 100%;
+
   min-height: 190px;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
   padding: 25px 15px;
@@ -586,12 +658,15 @@ body {
   text-align: center;
 
   background: #ffffff;
+
   border: 1px solid #eeeeee;
+
   border-radius: 16px;
 
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
 
   text-decoration: none !important;
+
   color: inherit !important;
 
   transition: all 0.3s ease;
@@ -619,12 +694,15 @@ body {
   height: 55px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   margin-bottom: 12px;
 
   font-size: 38px;
+
   line-height: 1;
 }
 
@@ -634,6 +712,7 @@ body {
 .instagram-icon,
 .whatsapp-icon {
   width: 45px;
+
   height: 45px;
 
   object-fit: contain;
@@ -646,6 +725,7 @@ body {
   margin: 5px 0;
 
   font-size: 18px;
+
   font-weight: 700;
 
   color: #111111;
@@ -658,6 +738,7 @@ body {
   margin: 5px 0;
 
   font-size: 14px;
+
   line-height: 1.5;
 
   color: #666666;
@@ -681,14 +762,19 @@ body {
 
 .contact-link {
   width: 100%;
+
   height: 100%;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   justify-content: center;
 
   text-decoration: none !important;
+
   color: inherit !important;
 
   cursor: pointer;
@@ -701,6 +787,7 @@ body {
 
   .contact-container {
     grid-template-columns: repeat(2, 1fr);
+
     max-width: 700px;
   }
 
@@ -711,6 +798,7 @@ body {
 
   .contact-container {
     grid-template-columns: 1fr;
+
     max-width: 350px;
   }
 
@@ -719,6 +807,7 @@ body {
   }
 
 }
+
 
 /* ================= CONTACT BUTTON ================= */
 
@@ -755,14 +844,19 @@ body {
 
 .footer {
   background: #1f1f1f;
+
   color: #ffffff;
+
   text-align: center;
+
   padding: 60px 20px 25px;
 }
 
 .footer-content {
   width: 100%;
+
   max-width: 900px;
+
   margin: auto;
 }
 
@@ -771,15 +865,21 @@ body {
 
 .footer-logo {
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   margin-bottom: 15px;
 }
 
 .footer-brand-logo {
   width: 180px;
+
   height: auto;
+
   object-fit: contain;
+
   display: block;
 }
 
@@ -788,8 +888,11 @@ body {
 
 .footer p {
   color: #cccccc;
+
   margin-bottom: 8px;
+
   font-size: 15px;
+
   line-height: 1.6;
 }
 
@@ -798,8 +901,11 @@ body {
 
 .footer-links {
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 30px;
 
   margin: 28px 0;
@@ -807,9 +913,11 @@ body {
 
 .footer-links a {
   color: #ffffff;
+
   text-decoration: none;
 
   font-size: 15px;
+
   font-weight: 600;
 
   transition: 0.3s ease;
@@ -824,6 +932,7 @@ body {
 
 .footer-line {
   width: 100%;
+
   height: 1px;
 
   background: #444444;
@@ -836,7 +945,9 @@ body {
 
 .footer .copyright {
   font-size: 13px;
+
   color: #888888;
+
   margin-bottom: 0;
 }
 
@@ -859,7 +970,9 @@ body {
 
   .footer-links {
     gap: 18px;
+
     flex-wrap: wrap;
+
     margin: 25px 0;
   }
 
@@ -888,16 +1001,10 @@ body {
 
 }
 
+
 /* ========================================================= */
 /* ================= TABLET RESPONSIVE ==================== */
 /* ========================================================= */
-
-/*
-  YAHAN SE RESPONSIVE CSS START HAI.
-
-  Isko alag file mein add nahi karna.
-  Isi globals.css ke bottom mein hai.
-*/
 
 @media (max-width: 900px) {
 
@@ -921,24 +1028,24 @@ body {
   /* ================= NAVBAR ================= */
 
   .navbar {
-  padding: 12px 20px;
+    padding: 12px 20px;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  gap: 10px;
-}
+    gap: 10px;
+  }
 
   .brand-logo {
     width: 110px;
   }
 
   .nav-links {
-  gap: 20px;
+    gap: 20px;
 
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 
-  justify-content: center;
-}
+    justify-content: center;
+  }
 
   .nav-links a {
     font-size: 15px;
@@ -955,40 +1062,43 @@ body {
   /* ================= HERO ================= */
 
   .hero-text {
-  padding: 40px 15px 50px;
-}
+    padding: 40px 15px 50px;
+  }
 
   .hero-brand-logo {
-  width: 180px;
-}
-
+    width: 180px;
+  }
 
   .hero-text p {
-  font-size: 21px;
-}
+    font-size: 21px;
+  }
 
+  .hero-text h3 {
+    font-size: 15px;
 
-.hero-text h3 {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
+    line-height: 1.6;
 
-.btn {
-  font-size: 16px;
-  padding: 13px 28px;
-}
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    font-size: 16px;
+
+    padding: 13px 28px;
+  }
 
 
   /* ================= SECTIONS ================= */
 
   .menu-section,
   .special-section {
-  padding: 60px 15px;
-}
+    padding: 60px 15px;
+  }
+
   .about-section {
-  padding: 60px 18px;
-}
+    padding: 60px 18px;
+  }
+
   .contact-section {
     padding: 55px 15px;
   }
@@ -996,114 +1106,143 @@ body {
 
   .menu-section h2,
   .special-section h2 {
-  font-size: 30px;
+    font-size: 30px;
+  }
 
-  margin-bottom: 35px;
-}
   .about-section h2 {
-  font-size: 30px;
+    font-size: 30px;
 
-  margin-bottom: 28px;
-}
+    margin-bottom: 28px;
+  }
+
   .contact-section h2 {
     font-size: 30px;
+  }
+
+
+  /* ================= SPECIAL MENU SPACING MOBILE ================= */
+
+  .special-section .section-subtitle {
+    font-size: 14px;
+
+    margin-bottom: 4px;
+  }
+
+  .special-section h2 {
+    font-size: 30px;
+
+    margin-top: 0;
+
+    margin-bottom: 8px;
+  }
+
+  .special-section .section-intro {
+    font-size: 14px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
   }
 
 
   /* ================= SPECIAL CARDS ================= */
 
   .card {
-  width: 170px;
+    width: 170px;
 
-  min-height: 220px;
+    min-height: 220px;
 
-  padding: 25px 15px;
-}
+    padding: 25px 15px;
+  }
 
 
   /* ================= ABOUT ================= */
 
   .about-section p {
-  font-size: 15px;
+    font-size: 15px;
 
-  line-height: 1.7;
+    line-height: 1.7;
 
-  margin-bottom: 18px;
-}
+    margin-bottom: 18px;
+  }
+
 
   /* ================= MOBILE CONTACT ================= */
 
-.contact-container {
-  width: 100%;
+  .contact-container {
+    width: 100%;
 
-  max-width: 600px;
+    max-width: 600px;
 
-  padding: 0 10px;
+    padding: 0 10px;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
-  gap: 15px;
-}
+    gap: 15px;
+  }
 
-.contact-card {
-  min-height: 180px;
+  .contact-card {
+    min-height: 180px;
 
-  padding: 20px 10px;
-}
+    padding: 20px 10px;
+  }
 
-.contact-link {
-  min-height: 180px;
+  .contact-link {
+    min-height: 180px;
 
-  padding: 20px 10px;
-}
+    padding: 20px 10px;
+  }
 
-.contact-icon {
-  width: 56px;
+  .contact-icon {
+    width: 56px;
 
-  height: 56px;
+    height: 56px;
 
-  font-size: 30px;
+    font-size: 30px;
 
-  margin-bottom: 12px;
-}
+    margin-bottom: 12px;
+  }
 
-.instagram-icon,
-.whatsapp-icon {
-  width: 38px !important;
+  .instagram-icon,
+  .whatsapp-icon {
+    width: 38px !important;
 
-  height: 38px !important;
-}
+    height: 38px !important;
+  }
 
-.contact-card h3 {
-  font-size: 16px;
+  .contact-card h3 {
+    font-size: 16px;
 
-  margin-bottom: 7px;
-}
+    margin-bottom: 7px;
+  }
 
-.contact-card p {
-  font-size: 12px;
+  .contact-card p {
+    font-size: 12px;
 
-  line-height: 1.4;
-}
+    line-height: 1.4;
+  }
 
 
   /* ================= FOOTER ================= */
 
   .footer-links {
-  gap: 18px;
+    gap: 18px;
 
-  flex-wrap: wrap;
+    flex-wrap: wrap;
 
-  margin: 25px 0;
-}
+    margin: 25px 0;
+  }
 
-.footer-brand-logo {
-  width: 160px;
-}
+  .footer-brand-logo {
+    width: 160px;
+  }
 
-.footer p {
-  font-size: 14px;
-}
+  .footer p {
+    font-size: 14px;
+  }
+
 }
 
 
@@ -1165,11 +1304,11 @@ body {
     max-width: 350px;
   }
 
-   .contact-card {
+  .contact-card {
     min-height: 165px;
   }
 
- .contact-link {
+  .contact-link {
     min-height: 165px;
   }
 
@@ -1182,7 +1321,12 @@ body {
     max-width: 280px;
   }
 
-}.footer {
+}
+
+
+/* ================= FOOTER SMALL MOBILE ================= */
+
+.footer {
   padding: 50px 15px 22px;
 }
 
@@ -1196,49 +1340,76 @@ body {
 
 .footer-brand-logo {
   width: 150px;
-}/* ================= ORDER POPUP ================= */
+}
+
+
+/* ================= ORDER POPUP ================= */
 
 .order-overlay {
   position: fixed;
+
   inset: 0;
+
   background: rgba(0, 0, 0, 0.55);
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   z-index: 9999;
+
   padding: 20px;
 }
 
 .order-popup {
   position: relative;
+
   width: 100%;
+
   max-width: 520px;
+
   max-height: 90vh;
+
   overflow-y: auto;
+
   background: #ffffff;
+
   border-radius: 20px;
+
   padding: 30px;
+
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
 .close-order {
   position: absolute;
+
   top: 12px;
+
   right: 16px;
+
   border: none;
+
   background: transparent;
+
   font-size: 30px;
+
   cursor: pointer;
+
   color: #333;
 }
 
 .order-popup h2 {
   margin: 0;
+
   font-size: 28px;
 }
 
 .order-subtitle {
   margin-top: 6px;
+
   color: #777;
 }
 
@@ -1248,59 +1419,85 @@ body {
 
 .order-item {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 20px;
+
   padding: 16px 0;
+
   border-bottom: 1px solid #eeeeee;
 }
 
 .order-item h3 {
   margin: 0;
+
   font-size: 17px;
 }
 
 .order-item p {
   margin: 5px 0 0;
+
   color: #ff4b18;
+
   font-weight: 600;
 }
 
 .quantity-box {
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
   border: 1px solid #ff4b18;
+
   border-radius: 8px;
+
   padding: 4px;
 }
 
 .quantity-box button {
   width: 30px;
+
   height: 30px;
+
   border: none;
+
   background: #ff4b18;
+
   color: white;
+
   border-radius: 6px;
+
   font-size: 20px;
+
   cursor: pointer;
 }
 
 .quantity-box span {
   min-width: 20px;
+
   text-align: center;
+
   font-weight: 600;
 }
 
 .order-summary {
   margin-top: 20px;
+
   padding-top: 15px;
+
   border-top: 2px solid #eeeeee;
 }
 
 .order-summary div {
   display: flex;
+
   justify-content: space-between;
+
   margin: 8px 0;
 }
 
@@ -1310,21 +1507,36 @@ body {
 
 .place-order-btn {
   width: 100%;
+
   margin-top: 20px;
+
   padding: 14px;
+
   border: none;
+
   border-radius: 10px;
+
   background: #ff4b18;
+
   color: white;
+
   font-size: 17px;
+
   font-weight: 700;
+
   cursor: pointer;
 }
 
 .place-order-btn:disabled {
   background: #cccccc;
+
   cursor: not-allowed;
-}.customer-details {
+}
+
+
+/* ================= CUSTOMER DETAILS ================= */
+
+.customer-details {
   margin-top: 25px;
 }
 
@@ -1335,13 +1547,21 @@ body {
 .customer-details input,
 .customer-details textarea {
   width: 100%;
+
   box-sizing: border-box;
+
   padding: 12px;
+
   margin-bottom: 12px;
+
   border: 1px solid #dddddd;
+
   border-radius: 8px;
+
   font-size: 15px;
+
   font-family: inherit;
+
   outline: none;
 }
 
@@ -1352,15 +1572,22 @@ body {
 
 .customer-details textarea {
   resize: vertical;
-}/* ================= ORDER SUCCESS ================= */
+}
+
+
+/* ================= ORDER SUCCESS ================= */
 
 .success-overlay {
   position: fixed;
+
   inset: 0;
+
   background: rgba(0, 0, 0, 0.65);
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   z-index: 9999;
@@ -1368,12 +1595,13 @@ body {
   padding: 20px;
 }
 
-
 .success-popup {
   width: 100%;
+
   max-width: 420px;
 
   background: white;
+
   border-radius: 18px;
 
   padding: 35px 25px;
@@ -1385,9 +1613,9 @@ body {
   animation: successPopup 0.25s ease;
 }
 
-
 .success-icon {
   width: 65px;
+
   height: 65px;
 
   margin: 0 auto 18px;
@@ -1395,23 +1623,25 @@ body {
   border-radius: 50%;
 
   background: #25d366;
+
   color: white;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   font-size: 38px;
+
   font-weight: bold;
 }
-
 
 .success-popup h2 {
   margin: 0 0 10px;
 
   font-size: 24px;
 }
-
 
 .success-popup p {
   margin: 8px 0;
@@ -1421,13 +1651,11 @@ body {
   line-height: 1.5;
 }
 
-
 .success-text {
   font-size: 14px;
 
   margin-top: 15px !important;
 }
-
 
 .success-close-btn {
   width: 100%;
@@ -1451,7 +1679,6 @@ body {
   cursor: pointer;
 }
 
-
 .success-close-btn:hover {
   opacity: 0.9;
 }
@@ -1461,34 +1688,46 @@ body {
 
   from {
     opacity: 0;
+
     transform: scale(0.9);
   }
 
   to {
     opacity: 1;
+
     transform: scale(1);
   }
 
-}/* ================= MOBILE ORDER POPUP ================= */
+}
+
+
+/* ================= MOBILE ORDER POPUP ================= */
 
 @media (max-width: 600px) {
 
   .order-overlay {
     padding: 10px;
+
     align-items: center;
   }
 
   .order-popup {
     width: 100%;
+
     max-width: 100%;
+
     max-height: 92vh;
+
     padding: 22px 16px;
+
     border-radius: 16px;
+
     box-sizing: border-box;
   }
 
   .order-popup h2 {
     font-size: 23px;
+
     padding-right: 30px;
   }
 
@@ -1498,6 +1737,7 @@ body {
 
   .order-item {
     gap: 10px;
+
     padding: 14px 0;
   }
 
@@ -1515,7 +1755,9 @@ body {
 
   .quantity-box button {
     width: 34px;
+
     height: 34px;
+
     font-size: 20px;
   }
 
@@ -1526,56 +1768,78 @@ body {
   .customer-details input,
   .customer-details textarea {
     font-size: 16px;
+
     padding: 12px;
   }
 
   .place-order-btn {
     padding: 15px;
+
     font-size: 16px;
   }
 
   .close-order {
     top: 8px;
+
     right: 12px;
+
     font-size: 28px;
   }
-}/* ================= YOUR ORDER ================= */
+
+}
+
+
+/* ================= YOUR ORDER ================= */
 
 .your-order {
   margin-top: 22px;
+
   padding: 16px;
+
   border-radius: 12px;
+
   background: #fff7f3;
+
   border: 1px solid #ffe0d4;
 }
 
 .your-order h3 {
   margin: 0 0 14px;
+
   font-size: 19px;
 }
 
 .your-order-items {
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
 }
 
 .your-order-row {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
   gap: 15px;
+
   font-size: 14px;
 }
 
 .your-order-name {
   display: flex;
+
   align-items: center;
+
   gap: 8px;
 }
 
 .your-order-name small {
   color: #777;
+
   font-weight: 600;
 }
 
@@ -1585,18 +1849,26 @@ body {
 
 .your-order-total {
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   margin-top: 15px;
+
   padding-top: 12px;
+
   border-top: 1px solid #ead7d0;
+
   font-size: 17px;
 }
 
 .your-order-total strong {
   font-size: 20px;
+}
 
-}@media (max-width: 600px) {
+
+@media (max-width: 600px) {
 
   .your-order {
     padding: 14px;
@@ -1614,31 +1886,42 @@ body {
     font-size: 18px;
   }
 
-}/* ================= YOUR ORDER CONTROLS ================= */
+}
+
+
+/* ================= YOUR ORDER CONTROLS ================= */
 
 .your-order-controls {
   display: flex;
+
   align-items: center;
+
   gap: 7px;
 }
 
 .your-order-controls button {
   width: 30px;
+
   height: 30px;
 
   border: none;
+
   border-radius: 6px;
 
   background: #ff4b23;
+
   color: white;
 
   font-size: 18px;
+
   font-weight: bold;
 
   cursor: pointer;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
@@ -1648,14 +1931,22 @@ body {
 
 .your-order-controls span {
   min-width: 20px;
+
   text-align: center;
+
   font-weight: 600;
-}@media (max-width: 600px) {
+}
+
+
+@media (max-width: 600px) {
 
   .your-order-row {
     display: grid;
+
     grid-template-columns: 1fr auto auto;
+
     gap: 8px;
+
     align-items: center;
   }
 
@@ -1673,7 +1964,9 @@ body {
 
   .your-order-controls button {
     width: 28px;
+
     height: 28px;
+
     font-size: 17px;
   }
 
@@ -1681,43 +1974,63 @@ body {
     font-size: 13px;
   }
 
-}/* ================= MAGGI ADDONS ================= */
+}
+
+
+/* ================= MAGGI ADDONS ================= */
 
 .maggi-addons {
   margin-top: 20px;
+
   padding: 15px;
+
   border-radius: 12px;
+
   background: #fff7f3;
+
   border: 1px solid #ffe0d4;
 }
 
 .maggi-addons h3 {
   margin: 0 0 12px;
+
   font-size: 17px;
 }
 
 .addon-option {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   padding: 10px 0;
+
   cursor: pointer;
 }
 
 .addon-option input {
   width: 18px;
+
   height: 18px;
+
   accent-color: #ff4b23;
 }
 
 .addon-option span {
   flex: 1;
+
   font-size: 14px;
 }
 
 .addon-option strong {
   font-size: 14px;
-}@media (max-width: 768px) {
+}
+
+
+/* ================= MOBILE BANNER ================= */
+
+@media (max-width: 768px) {
 
   .banner-section {
     width: 100%;
@@ -1725,6 +2038,7 @@ body {
 
   .banner {
     width: 100%;
+
     height: auto !important;
   }
 
