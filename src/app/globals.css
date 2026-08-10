@@ -134,16 +134,16 @@ body {
 }
 
 .banner-section {
+  position: relative;
   width: 100%;
   overflow: hidden;
-  line-height: 0;
 }
 
 .banner {
   width: 100%;
-  height: auto !important;
-  display: block;
+  height: 600px;
   object-fit: cover;
+  display: block;
 }
 
 
