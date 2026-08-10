@@ -143,6 +143,8 @@ export default function Home() {
 
   const [cart, setCart] = useState({});
 
+  const [showCart, setShowCart] = useState(false);
+
   const [customerName, setCustomerName] =
     useState("");
 
@@ -366,6 +368,44 @@ Thank you for ordering from *CraveOn* ❤️`;
 
   return (
     <main className="hero">
+      {/* =====================================================
+    FLOATING CART BAR
+===================================================== */}
+
+{totalQuantity > 0 && !selectedSpecial && (
+
+  <div className="floating-cart-bar">
+
+    <div className="floating-cart-info">
+
+      <div className="floating-cart-icon">
+        🛒
+      </div>
+
+      <div>
+        <strong>
+          {totalQuantity}{" "}
+          {totalQuantity === 1 ? "Item" : "Items"}
+        </strong>
+
+        <span>
+          ₹{foodTotal}
+        </span>
+      </div>
+
+    </div>
+
+
+    <button
+      className="floating-cart-button"
+      onClick={() => setShowCart(true)}
+    >
+      View Order →
+    </button>
+
+  </div>
+
+)}
 
       {/* =====================================================
           NAVBAR
@@ -997,6 +1037,210 @@ Thank you for ordering from *CraveOn* ❤️`;
 
       )}
 
+{/* =====================================================
+    FULL CART VIEW
+===================================================== */}
+
+{showCart && (
+
+  <div
+    className="cart-view-overlay"
+    onClick={() => setShowCart(false)}
+  >
+
+    <div
+      className="cart-view-popup"
+      onClick={(e) => e.stopPropagation()}
+    >
+
+      {/* HEADER */}
+
+      <div className="cart-view-header">
+
+        <div>
+          <h2>Your Order</h2>
+
+          <p>
+            {totalQuantity}{" "}
+            {totalQuantity === 1
+              ? "item"
+              : "items"}{" "}
+            in your order
+          </p>
+        </div>
+
+        <button
+          className="cart-view-close"
+          onClick={() => setShowCart(false)}
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      {/* ORDER ITEMS */}
+
+      <div className="cart-view-items">
+
+        {cartItems.map(([name, item]) => {
+
+          const itemAddOnTotal =
+            Object.values(
+              item.addOns || {}
+            ).reduce(
+              (sum, addon) =>
+                sum +
+                addon.price *
+                  item.quantity,
+              0
+            );
+
+          return (
+
+            <div
+              className="cart-view-item"
+              key={name}
+            >
+
+              <div className="cart-view-item-info">
+
+                <h3>
+                  {name}
+                </h3>
+
+                <p>
+                  ₹{item.price} each
+                </p>
+
+
+                {/* ADDONS */}
+
+                {Object.keys(
+                  item.addOns || {}
+                ).length > 0 && (
+
+                  <small>
+                    +{" "}
+                    {Object.entries(
+                      item.addOns
+                    )
+                      .map(
+                        ([addonName]) =>
+                          addonName
+                      )
+                      .join(", ")}
+                  </small>
+
+                )}
+
+              </div>
+
+
+              {/* QUANTITY */}
+
+              <div className="cart-view-controls">
+
+                <button
+                  onClick={() =>
+                    updateQuantity(
+                      name,
+                      item.price,
+                      -1,
+                      item.category
+                    )
+                  }
+                >
+                  −
+                </button>
+
+                <span>
+                  {item.quantity}
+                </span>
+
+                <button
+                  onClick={() =>
+                    updateQuantity(
+                      name,
+                      item.price,
+                      1,
+                      item.category
+                    )
+                  }
+                >
+                  +
+                </button>
+
+              </div>
+
+
+              {/* ITEM TOTAL */}
+
+              <strong className="cart-view-price">
+
+                ₹
+                {item.price *
+                  item.quantity +
+                  itemAddOnTotal}
+
+              </strong>
+
+            </div>
+
+          );
+
+        })}
+
+      </div>
+
+
+      {/* TOTAL */}
+
+      <div className="cart-view-total">
+
+        <span>
+          Food Total
+        </span>
+
+        <strong>
+          ₹{foodTotal}
+        </strong>
+
+      </div>
+
+
+      {/* CONTINUE SHOPPING */}
+
+      <button
+        className="continue-shopping-btn"
+        onClick={() =>
+          setShowCart(false)
+        }
+      >
+        ← Continue Ordering
+      </button>
+
+
+      {/* CHECKOUT */}
+
+      <button
+        className="cart-checkout-btn"
+        onClick={() => {
+          setShowCart(false);
+          setSelectedSpecial(
+            cartItems[0]?.[1]?.category ||
+              "Cold Coffee"
+          );
+        }}
+      >
+        Continue to Checkout →
+      </button>
+
+    </div>
+
+  </div>
+
+)}
 
       {/* =====================================================
           SUCCESS POPUP
