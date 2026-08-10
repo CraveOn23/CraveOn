@@ -4,6 +4,10 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Home() {
+  /* =========================================================
+     MENU ITEMS
+  ========================================================= */
+
   const specialItems = {
     "Cold Coffee": [
       { name: "Classic Frappe", price: 79 },
@@ -59,6 +63,10 @@ export default function Home() {
     ],
   };
 
+  /* =========================================================
+     MENU CATEGORIES
+  ========================================================= */
+
   const categories = [
     {
       name: "Cold Coffee",
@@ -87,6 +95,10 @@ export default function Home() {
     },
   ];
 
+  /* =========================================================
+     ADD-ONS
+  ========================================================= */
+
   const maggiAddOns = [
     { name: "Extra Vegetables", price: 10 },
     { name: "Extra Cheese", price: 20 },
@@ -114,7 +126,9 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBanner((prev) => (prev + 1) % banners.length);
+      setCurrentBanner(
+        (prev) => (prev + 1) % banners.length
+      );
     }, 4000);
 
     return () => clearInterval(interval);
@@ -124,25 +138,41 @@ export default function Home() {
      STATES
   ========================================================= */
 
-  const [selectedSpecial, setSelectedSpecial] = useState(null);
+  const [selectedSpecial, setSelectedSpecial] =
+    useState(null);
+
   const [cart, setCart] = useState({});
-  const [customerName, setCustomerName] = useState("");
-  const [customerPhone, setCustomerPhone] = useState("");
-  const [customerAddress, setCustomerAddress] = useState("");
-  const [orderPlaced, setOrderPlaced] = useState(false);
+
+  const [customerName, setCustomerName] =
+    useState("");
+
+  const [customerPhone, setCustomerPhone] =
+    useState("");
+
+  const [customerAddress, setCustomerAddress] =
+    useState("");
+
+  const [orderPlaced, setOrderPlaced] =
+    useState(false);
 
   /* =========================================================
      CART FUNCTIONS
   ========================================================= */
 
-  const updateQuantity = (itemName, price, change, category) => {
+  const updateQuantity = (
+    itemName,
+    price,
+    change,
+    category
+  ) => {
     setCart((prev) => {
-      const currentItem = prev[itemName] || {
-        price,
-        quantity: 0,
-        category,
-        addOns: {},
-      };
+      const currentItem =
+        prev[itemName] || {
+          price,
+          quantity: 0,
+          category,
+          addOns: {},
+        };
 
       const newQty = Math.max(
         0,
@@ -218,7 +248,9 @@ export default function Home() {
         item.price * item.quantity;
 
       const itemAddOnTotal =
-        Object.values(item.addOns || {}).reduce(
+        Object.values(
+          item.addOns || {}
+        ).reduce(
           (sum, addon) =>
             sum +
             addon.price * item.quantity,
@@ -355,21 +387,13 @@ Thank you for ordering from *CraveOn* ❤️`;
 
         <div className="nav-links">
 
-          <a href="#home">
-            Home
-          </a>
+          <a href="#home">Home</a>
 
-          <a href="#menu">
-            Menu
-          </a>
+          <a href="#menu">Menu</a>
 
-          <a href="#about">
-            About
-          </a>
+          <a href="#about">About</a>
 
-          <a href="#contact">
-            Contact
-          </a>
+          <a href="#contact">Contact</a>
 
         </div>
 
@@ -377,7 +401,7 @@ Thank you for ordering from *CraveOn* ❤️`;
 
 
       {/* =====================================================
-          BANNER + HERO
+          HERO
       ===================================================== */}
 
       <section
@@ -395,8 +419,6 @@ Thank you for ordering from *CraveOn* ❤️`;
             className="banner"
             priority
           />
-
-          {/* Banner dots */}
 
           <div className="banner-dots">
 
@@ -424,9 +446,7 @@ Thank you for ordering from *CraveOn* ❤️`;
         </div>
 
 
-        {/* =================================================
-            HERO TEXT
-        ================================================= */}
+        {/* HERO TEXT */}
 
         <div className="hero-text">
 
@@ -469,21 +489,41 @@ Thank you for ordering from *CraveOn* ❤️`;
       ===================================================== */}
 
       <section
+        className="menu-section"
         id="menu"
-        className="special-section"
       >
 
-        <div className="section-kicker">
-          OUR MENU
+        {/* OUR MENU TITLE */}
+
+        <div className="section-heading">
+
+          <span className="heading-line"></span>
+
+          <p className="section-title">
+            OUR MENU
+          </p>
+
+          <span className="heading-line"></span>
+
         </div>
+
+
+        {/* MAIN HEADING */}
 
         <h2>
           Choose Your Craving
         </h2>
 
+
+        {/* DESCRIPTION */}
+
         <p className="section-intro">
-          Tap a category to see the full menu and build your order.
+          Tap a category to see the full menu
+          and build your order.
         </p>
+
+
+        {/* MENU CARDS */}
 
         <div className="card-container">
 
@@ -653,7 +693,7 @@ Thank you for ordering from *CraveOn* ❤️`;
                     </div>
 
 
-                    {/* ADDONS */}
+                    {/* ADD-ONS */}
 
                     {addOns.length > 0 &&
                       quantity > 0 && (
@@ -716,9 +756,7 @@ Thank you for ordering from *CraveOn* ❤️`;
             </div>
 
 
-            {/* =================================================
-                YOUR ORDER
-            ================================================= */}
+            {/* YOUR ORDER */}
 
             {cartItems.length > 0 && (
 
@@ -841,9 +879,7 @@ Thank you for ordering from *CraveOn* ❤️`;
             )}
 
 
-            {/* =================================================
-                CUSTOMER DETAILS
-            ================================================= */}
+            {/* CUSTOMER DETAILS */}
 
             <div className="order-summary">
 
@@ -903,6 +939,7 @@ Thank you for ordering from *CraveOn* ❤️`;
 
 
               <div>
+
                 <span>
                   Items
                 </span>
@@ -910,10 +947,12 @@ Thank you for ordering from *CraveOn* ❤️`;
                 <strong>
                   {totalQuantity}
                 </strong>
+
               </div>
 
 
               <div>
+
                 <span>
                   Food Total
                 </span>
@@ -921,6 +960,7 @@ Thank you for ordering from *CraveOn* ❤️`;
                 <strong>
                   ₹{foodTotal}
                 </strong>
+
               </div>
 
 

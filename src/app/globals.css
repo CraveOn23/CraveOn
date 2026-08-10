@@ -256,31 +256,200 @@ body {
 /* ================= OUR MENU ================= */
 
 .menu-section {
-  padding: 65px 20px;
-
+  padding: 58px 20px 65px;
   text-align: center;
-
   background: #f8f8f8;
 }
 
-.menu-section h2 {
-  font-size: 40px;
-  margin-bottom: 35px;
-  color: #111;
+
+/* ================= OUR MENU TITLE ================= */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  margin-bottom: 8px;
 }
 
-.menu-image {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
+.section-title {
+  margin: 0;
 
+  font-size: 22px;
+  font-weight: 800;
+
+  color: #111;
+
+  letter-spacing: 0.5px;
+}
+
+.heading-line {
+  width: 60px;
+  height: 3px;
+
+  background: #ff5a1f;
+
+  border-radius: 10px;
+}
+
+
+/* ================= MENU MAIN HEADING ================= */
+
+.menu-section h2 {
+  font-size: 40px;
+
+  margin: 0 0 27px;
+
+  color: #111;
+
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+
+/* ================= MENU DESCRIPTION ================= */
+
+.menu-section .section-intro {
+  font-size: 17px;
+
+  color: #555;
+
+  margin: 0 auto 30px;
+
+  line-height: 1.5;
+}
+
+
+/* ================= MENU CARDS ================= */
+
+.menu-section .card-container {
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: stretch;
+
+  gap: 20px;
+
+  flex-wrap: nowrap;
+}
+
+
+/* ================= INDIVIDUAL MENU CARD ================= */
+
+.menu-section .card {
+  width: 195px;
+
+  min-height: 260px;
+
+  padding: 30px 18px 25px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 7px 22px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  cursor: pointer;
+}
+
+
+/* ================= CARD HOVER ================= */
+
+.menu-section .card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================= FOOD ICON ================= */
+
+.menu-section .icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  font-size: 36px;
+
+  border-radius: 50%;
+
+  background: #fff3ed;
+}
+
+
+/* ================= CARD HEADING ================= */
+
+.menu-section .card h3 {
+  font-size: 19px;
+
+  margin: 0 0 8px;
+
+  color: #111;
+
+  font-weight: 700;
+}
+
+
+/* ================= CARD DESCRIPTION ================= */
+
+.menu-section .card p {
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  color: #666;
+
+  margin: 0;
+
+  min-height: 40px;
+}
+
+
+/* ================= VIEW ITEMS ================= */
+
+.menu-section .card span {
   display: block;
 
-  margin: auto;
+  margin-top: auto;
 
-  border-radius: 15px;
+  padding-top: 18px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  color: #ff5a1f;
+
+  font-weight: 700;
+
+  font-size: 14px;
 }
 
 
@@ -2040,6 +2209,293 @@ body {
     width: 100%;
 
     height: auto !important;
+  }
+
+}/* ========================================================= */
+/* =============== MENU SECTION FINAL DESIGN ============== */
+/* ========================================================= */
+
+.menu-section {
+  padding: 55px 20px 60px;
+  text-align: center;
+  background: #f8f8f8;
+}
+
+/* OUR MENU */
+.menu-section .section-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+
+  margin: 0 0 4px;
+}
+
+/* Orange lines beside OUR MENU */
+.menu-section .section-title::before,
+.menu-section .section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+
+  background: #ff5a1f;
+  border-radius: 5px;
+
+  display: block;
+}
+
+/* Choose Your Craving */
+.menu-section h2 {
+  font-size: 40px;
+  font-weight: 700;
+
+  color: #111;
+
+  margin: 0 0 26px;
+}
+
+/* Subtitle */
+.menu-section .section-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #444;
+
+  margin: 0 0 28px;
+
+  line-height: 1.5;
+}
+
+/* Cards */
+.menu-section .card-container {
+  margin-top: 0;
+
+  max-width: 1100px;
+
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+
+  flex-wrap: wrap;
+}
+
+/* ========================================================= */
+/* ===================== MOBILE ============================ */
+/* ========================================================= */
+
+@media (max-width: 768px) {
+
+  .menu-section {
+    padding: 50px 15px 55px;
+  }
+
+  .menu-section .section-title {
+    font-size: 20px;
+    gap: 18px;
+  }
+
+  .menu-section .section-title::before,
+  .menu-section .section-title::after {
+    width: 45px;
+    height: 2px;
+  }
+
+  .menu-section h2 {
+    font-size: 30px;
+    margin-bottom: 18px;
+  }
+
+  .menu-section .section-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+}/* =========================================================
+   MENU MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .menu-section .card-container {
+    flex-wrap: wrap;
+
+    max-width: 700px;
+  }
+
+  .menu-section .card {
+    width: 195px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .menu-section {
+    padding: 50px 15px 55px;
+  }
+
+
+  .section-heading {
+    gap: 15px;
+
+    margin-bottom: 8px;
+  }
+
+
+  .section-title {
+    font-size: 18px;
+  }
+
+
+  .heading-line {
+    width: 40px;
+    height: 2px;
+  }
+
+
+  .menu-section h2 {
+    font-size: 30px;
+
+    margin-bottom: 20px;
+  }
+
+
+  .menu-section .section-intro {
+    font-size: 15px;
+
+    margin-bottom: 30px;
+
+    padding: 0 10px;
+  }
+
+
+  .menu-section .card-container {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    max-width: 500px;
+  }
+
+
+  .menu-section .card {
+    width: 100%;
+
+    min-height: 220px;
+
+    padding: 25px 12px 20px;
+  }
+
+
+  .menu-section .icon {
+    width: 56px;
+    height: 56px;
+
+    font-size: 32px;
+
+    margin-bottom: 13px;
+  }
+
+
+  .menu-section .card h3 {
+    font-size: 17px;
+  }
+
+
+  .menu-section .card p {
+    font-size: 12px;
+  }
+
+
+  .menu-section .card span {
+    font-size: 13px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .menu-section {
+    padding: 45px 12px 50px;
+  }
+
+
+  .section-heading {
+    gap: 10px;
+  }
+
+
+  .section-title {
+    font-size: 17px;
+  }
+
+
+  .heading-line {
+    width: 32px;
+  }
+
+
+  .menu-section h2 {
+    font-size: 28px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .menu-section .section-intro {
+    font-size: 14px;
+
+    margin-bottom: 25px;
+  }
+
+
+  .menu-section .card-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+
+  .menu-section .card {
+    min-height: 205px;
+
+    padding: 22px 8px 18px;
+
+    border-radius: 15px;
+  }
+
+
+  .menu-section .icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 29px;
+  }
+
+
+  .menu-section .card h3 {
+    font-size: 16px;
+  }
+
+
+  .menu-section .card p {
+    font-size: 11px;
+  }
+
+
+  .menu-section .card span {
+    font-size: 12px;
   }
 
 }
