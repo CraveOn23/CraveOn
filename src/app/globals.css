@@ -295,7 +295,12 @@ body {
   margin-bottom: 45px;
   color: #111;
 }
-
+.section-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin-top: -30px;
+  margin-bottom: 35px;
+}
 
 /* Cards Container */
 
