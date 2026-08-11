@@ -1533,7 +1533,12 @@ alt="phone"
       </p>
 
       <span>
-        Check Now →
+        <a 
+href="https://wa.me/919079540030?text=Hello%20CraveOn,%20I%20want%20to%20know%20if%20you%20are%20open%20right%20now?"
+target="_blank"
+>
+Check Now →
+</a>
       </span>
 
     </a>
