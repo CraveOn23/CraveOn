@@ -1190,9 +1190,8 @@ to{
 
 
 /* ===============================
-   CONTACT CARDS (MATCH MENU CARDS SIZE)
+   CONTACT CARDS (FINAL SIZE)
 ================================ */
-
 
 .contact-container {
 
@@ -1202,37 +1201,34 @@ to{
 
   align-items:center;
 
-  gap:18px;
+  gap:22px;
 
-  margin-top:35px;
+  margin-top:45px;
 
   flex-wrap:wrap;
 
 }
 
 
-
 .contact-card {
 
 
-  width:120px;
+  width:200px;
 
-  min-height:140px;
+  height:210px;
 
 
   background:white;
 
 
-  border-radius:14px;
+  border-radius:18px;
 
 
   display:flex;
 
   flex-direction:column;
 
-
   justify-content:center;
-
 
   align-items:center;
 
@@ -1244,7 +1240,7 @@ to{
 
 
   box-shadow:
-  0 8px 20px rgba(0,0,0,0.07);
+  0 12px 30px rgba(0,0,0,0.08);
 
 
   transition:.35s ease;
@@ -1256,14 +1252,13 @@ to{
 
 .contact-card:hover {
 
- transform:translateY(-6px);
+ transform:translateY(-8px);
 
 
  box-shadow:
- 0 15px 30px rgba(255,90,31,.18);
+ 0 20px 45px rgba(255,90,31,.20);
 
 }
-
 
 
 /* top orange line */
@@ -1276,9 +1271,9 @@ position:absolute;
 
 top:0;
 
-left:25px;
+left:35px;
 
-width:45px;
+width:75px;
 
 height:3px;
 
@@ -1299,9 +1294,9 @@ position:absolute;
 
 bottom:0;
 
-right:25px;
+right:35px;
 
-width:45px;
+width:75px;
 
 height:3px;
 
@@ -1318,9 +1313,9 @@ border-radius:10px;
 .contact-icon {
 
 
-width:45px;
+width:58px;
 
-height:45px;
+height:58px;
 
 border-radius:50%;
 
@@ -1335,14 +1330,14 @@ justify-content:center;
 background:#fff;
 
 
-font-size:24px;
+font-size:30px;
 
 
 box-shadow:
-0 6px 15px rgba(0,0,0,.10);
+0 8px 20px rgba(0,0,0,.12);
 
 
-margin-bottom:8px;
+margin-bottom:12px;
 
 }
 
@@ -1351,9 +1346,9 @@ margin-bottom:8px;
 
 .contact-card h3 {
 
-font-size:13px;
+font-size:17px;
 
-margin:5px 0;
+margin:8px 0;
 
 }
 
@@ -1365,13 +1360,13 @@ content:"";
 
 display:block;
 
-width:25px;
+width:32px;
 
-height:2px;
+height:3px;
 
 background:#ff5a1f;
 
-margin:6px auto;
+margin:8px auto;
 
 border-radius:10px;
 
@@ -1381,7 +1376,7 @@ border-radius:10px;
 
 .contact-card p {
 
-font-size:10px;
+font-size:13px;
 
 color:#777;
 
@@ -1391,13 +1386,15 @@ color:#777;
 
 .contact-card span {
 
-margin-top:8px;
+margin-top:10px;
 
-font-size:10px;
+font-size:13px;
 
 font-weight:600;
 
-color:#ff5a1f;}
+color:#ff5a1f;
+
+}
 
 
 /* ===============================
