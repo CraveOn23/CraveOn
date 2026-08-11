@@ -1190,7 +1190,7 @@ to{
 
 
 /* ===============================
-   CONTACT CARDS
+   CONTACT CARDS (MATCH MENU CARDS SIZE)
 ================================ */
 
 
@@ -1202,34 +1202,37 @@ to{
 
   align-items:center;
 
-  gap:28px;
+  gap:18px;
 
-  margin-top:45px;
+  margin-top:35px;
 
-  flex-wrap:nowrap;
+  flex-wrap:wrap;
 
 }
+
 
 
 .contact-card {
 
 
-  width:210px;
+  width:120px;
 
-  height:240px;
+  min-height:140px;
 
 
   background:white;
 
 
-  border-radius:22px;
+  border-radius:14px;
 
 
   display:flex;
 
   flex-direction:column;
 
+
   justify-content:center;
+
 
   align-items:center;
 
@@ -1241,7 +1244,7 @@ to{
 
 
   box-shadow:
-  0 15px 35px rgba(0,0,0,0.08);
+  0 8px 20px rgba(0,0,0,0.07);
 
 
   transition:.35s ease;
@@ -1253,16 +1256,17 @@ to{
 
 .contact-card:hover {
 
- transform:translateY(-8px);
+ transform:translateY(-6px);
 
 
  box-shadow:
- 0 25px 55px rgba(255,90,31,.20);
+ 0 15px 30px rgba(255,90,31,.18);
 
 }
 
 
-/* top line */
+
+/* top orange line */
 
 .contact-card::before {
 
@@ -1272,9 +1276,9 @@ position:absolute;
 
 top:0;
 
-left:35px;
+left:25px;
 
-width:80px;
+width:45px;
 
 height:3px;
 
@@ -1285,7 +1289,7 @@ border-radius:10px;
 }
 
 
-/* bottom line */
+/* bottom orange line */
 
 .contact-card::after {
 
@@ -1295,9 +1299,9 @@ position:absolute;
 
 bottom:0;
 
-right:35px;
+right:25px;
 
-width:80px;
+width:45px;
 
 height:3px;
 
@@ -1314,9 +1318,9 @@ border-radius:10px;
 .contact-icon {
 
 
-width:65px;
+width:45px;
 
-height:65px;
+height:45px;
 
 border-radius:50%;
 
@@ -1331,14 +1335,14 @@ justify-content:center;
 background:#fff;
 
 
-font-size:34px;
+font-size:24px;
 
 
 box-shadow:
-0 10px 25px rgba(0,0,0,.12);
+0 6px 15px rgba(0,0,0,.10);
 
 
-margin-bottom:15px;
+margin-bottom:8px;
 
 }
 
@@ -1347,11 +1351,12 @@ margin-bottom:15px;
 
 .contact-card h3 {
 
-font-size:18px;
+font-size:13px;
 
-margin:8px 0;
+margin:5px 0;
 
 }
+
 
 
 .contact-card h3::after {
@@ -1360,13 +1365,13 @@ content:"";
 
 display:block;
 
-width:35px;
+width:25px;
 
-height:3px;
+height:2px;
 
 background:#ff5a1f;
 
-margin:10px auto;
+margin:6px auto;
 
 border-radius:10px;
 
@@ -1376,7 +1381,7 @@ border-radius:10px;
 
 .contact-card p {
 
-font-size:14px;
+font-size:10px;
 
 color:#777;
 
@@ -1386,16 +1391,13 @@ color:#777;
 
 .contact-card span {
 
-margin-top:12px;
+margin-top:8px;
 
-font-size:14px;
+font-size:10px;
 
 font-weight:600;
 
-color:#ff5a1f;
-
-}
-
+color:#ff5a1f;}
 
 
 /* ===============================
@@ -1663,7 +1665,10 @@ flex-wrap:wrap;
 
 .contact-card{
 
-width:200px;
+width:120px;
+
+height:140px;
+
 
 }
 
