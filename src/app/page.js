@@ -1375,193 +1375,307 @@ className="hero-logo-img"
       </section>
 
 
-      {/* =====================================================
-          CONTACT
-      ===================================================== */}
+      {/* ===============================
+        CONTACT SECTION
+================================ */}
 
-      <section
- id="contact"
- className="contact-section reveal"
+<section
+  id="contact"
+  className="contact-section reveal"
 >
 
-        <h2>
-          Contact Us
-        </h2>
+  <div className="contact-heading">
 
-        <p>
-          Have a question or want to place an
-          order?
-        </p>
+    <span>
+      GET IN TOUCH
+    </span>
 
-        <div className="contact-container">
+    <h2>
+      Contact <b>Us</b>
+    </h2>
 
-          <a
-            href="tel:+919079540030"
-            className="contact-card contact-link"
-          >
+    <p>
+      Have a question or want to place an order?
+      <br/>
+      We are here to help you!
+    </p>
 
-            <div className="contact-icon">
-              📞
-            </div>
-
-            <h3>
-              Call Us
-            </h3>
-
-            <p>
-              +91 90795 40030
-            </p>
-
-          </a>
+  </div>
 
 
-          <a
-            href="https://www.instagram.com/craveonn_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-card contact-link"
-          >
-
-            <div className="contact-icon">
-
-              <Image
-                src="/images/Instagram_icon.png"
-                alt="Instagram"
-                width={45}
-                height={45}
-                className="instagram-icon"
-              />
-
-            </div>
-
-            <h3>
-              Instagram
-            </h3>
-
-            <p>
-              @craveonn_
-            </p>
-
-          </a>
+  <div className="contact-container">
 
 
-          <a
-            href="https://wa.me/919079540030"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-card contact-link"
-          >
+    <a
+      href="tel:+919079540030"
+      className="contact-card"
+    >
 
-            <div className="contact-icon">
+      <div className="contact-icon">
+        <Image 
+src="/images/phone.svg"
+width={45}
+height={45}
+alt="phone"
+/>
+      </div>
 
-              <Image
-                src="/images/Whatsapp_icon.png"
-                alt="WhatsApp"
-                width={45}
-                height={45}
-                className="whatsapp-icon"
-              />
+      <h3>
+        Call Us
+      </h3>
 
-            </div>
+      <p>
+        +91 90795 40030
+      </p>
 
-            <h3>
-              WhatsApp
-            </h3>
+      <span>
+        Tap to call →
+      </span>
 
-            <p>
-              Chat With Us
-            </p>
-
-          </a>
-
-
-          <a
-            href="https://wa.me/919079540030?text=Hi%20CraveOn%2C%20are%20you%20open%20right%20now%3F"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-card contact-link"
-          >
-
-            <div className="contact-icon">
-              🕐
-            </div>
-
-            <h3>
-              Opening Hours
-            </h3>
-
-            <p>
-              7 PM - 12 AM
-            </p>
-
-            <small>
-              Open Daily
-            </small>
-
-          </a>
-
-        </div>
-
-      </section>
+    </a>
 
 
-      {/* =====================================================
-          FOOTER
-      ===================================================== */}
 
-      <footer className="footer reveal">
+    <a
+      href="https://www.instagram.com/craveonn_/"
+      target="_blank"
+      className="contact-card"
+    >
 
-        <div className="footer-content">
+      <div className="contact-icon">
+        <Image 
+src="/images/instagram.svg"
+width={45}
+height={45}
+alt="phone"
+/>
+      </div>
 
-          <div className="footer-logo">
+      <h3>
+        Instagram
+      </h3>
 
-            <Image
-              src="/images/CraveOn The Cloud Kitchen ( White ).png"
-              alt="CraveOn Logo"
-              width={180}
-              height={80}
-              className="footer-brand-logo"
-            />
+      <p>
+        @craveonn_
+      </p>
 
-          </div>
+      <span>
+        Follow Us →
+      </span>
 
-          <p>
-            Crave More, Live More
-          </p>
+    </a>
 
-          <p>
-            Fresh Food • Fast Delivery • Cloud Kitchen
-          </p>
 
-          <div className="footer-links">
 
-            <a href="#home">
-              Home
-            </a>
 
-            <a href="#menu">
-              Menu
-            </a>
+    <a
+      href="https://wa.me/919079540030"
+      target="_blank"
+      className="contact-card"
+    >
 
-            <a href="#about">
-              About
-            </a>
+      <div className="contact-icon whatsapp-icon">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="45"
+    height="45"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      fill="#25D366"
+      d="M20.52 3.48A11.8 11.8 0 0 0 12.1 0C5.55 0 .22 5.33.22 11.88c0 2.09.55 4.13 1.6 5.93L.1 24l6.36-1.67a11.9 11.9 0 0 0 5.64 1.43h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.47-8.4ZM12.1 21.8c-1.77 0-3.5-.48-5-1.4l-.36-.21-3.77.99 1-3.67-.23-.38a9.85 9.85 0 0 1-1.52-5.25c0-5.44 4.43-9.87 9.88-9.87 2.63 0 5.1 1.03 6.95 2.88a9.8 9.8 0 0 1 2.88 6.99c0 5.44-4.43 9.92-9.88 9.92Z"
+    />
 
-            <a href="#contact">
-              Contact
-            </a>
+    <path
+      fill="#25D366"
+      d="M17.6 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.5-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5s1.08 2.9 1.23 3.1c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.64.72.23 1.37.2 1.89.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"
+    />
+  </svg>
+      </div>
 
-          </div>
+      <h3>
+        WhatsApp
+      </h3>
 
-          <div className="footer-line"></div>
+      <p>
+        Chat With Us
+      </p>
 
-          <p className="copyright">
-            © 2026 CraveOn. All Rights Reserved.
-          </p>
+      <span>
+        Open Chat →
+      </span>
 
-        </div>
+    </a>
 
-      </footer>
+
+
+    <a
+      href="#"
+      className="contact-card"
+    >
+
+      <div className="contact-icon">
+        <Image 
+src="/images/clock.svg"
+width={45}
+height={45}
+alt="phone"
+/>
+      </div>
+
+      <h3>
+        Opening Hours
+      </h3>
+
+      <p>
+        7 PM - 12 AM
+      </p>
+
+      <span>
+        Check Now →
+      </span>
+
+    </a>
+
+
+  </div>
+
+
+</section>
+
+      {/* ===============================
+          PREMIUM FOOTER
+================================ */}
+
+<footer className="premium-footer">
+
+  <div className="footer-container">
+
+
+    {/* LEFT */}
+
+    <div className="footer-column brand-column">
+
+      <Image
+        src="/images/CraveOn The Cloud Kitchen ( White ).png"
+        alt="CraveOn Logo"
+        width={180}
+        height={80}
+        className="footer-logo"
+      />
+
+
+      <h4>
+        Crave More, Live More
+      </h4>
+
+
+      <p>
+        Fresh Food • Fast Delivery • Cloud Kitchen
+      </p>
+
+
+      <div className="social-icons">
+
+        <a href="#">
+          ◎
+        </a>
+
+        <a href="#">
+          ◉
+        </a>
+
+        <a href="tel:+919079540030">
+          ☎
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+
+
+    {/* MIDDLE */}
+
+    <div className="footer-column footer-links">
+
+
+      <h3>
+        Quick Links
+      </h3>
+
+
+      <a href="#home">
+        › Home
+      </a>
+
+      <a href="#menu">
+        › Menu
+      </a>
+
+      <a href="#about">
+        › About
+      </a>
+
+      <a href="#contact">
+        › Contact
+      </a>
+
+
+    </div>
+
+
+
+
+
+    {/* RIGHT */}
+
+    <div className="footer-column">
+
+
+      <h3>
+        We're Here for You!
+      </h3>
+
+
+      <p>
+        Your cravings, our priority.
+      </p>
+
+
+      <p>
+        Let's connect!
+      </p>
+
+
+    </div>
+
+
+
+    <div className="footer-food-icon">
+
+      🍔
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <div className="footer-bottom">
+
+    © 2026 CraveOn. All Rights Reserved.
+
+  </div>
+
+
+</footer>
 
     </main>
   );

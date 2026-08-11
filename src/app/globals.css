@@ -799,14 +799,19 @@ body > * {
   background: #fff;
 }
 
-.contact-section h2 {
-  font-size: 40px;
+.contact-section h2{
 
-  margin-bottom: 15px;
+margin-bottom:10px;
 
-  color: #111;
+font-size:52px;
 
-  font-weight: 700;
+}
+
+
+.contact-section p{
+
+margin:5px;
+
 }
 
 .contact-section > p {
@@ -911,7 +916,9 @@ body > * {
 /* Instagram / WhatsApp images */
 
 .instagram-icon,
-.whatsapp-icon {
+.whatsapp-icon svg{
+  filter:none;
+  
   width: 45px;
 
   height: 45px;
@@ -1413,17 +1420,24 @@ body > * {
     height: 38px !important;
   }
 
-  .contact-card h3 {
-    font-size: 16px;
+  .contact-card h3{
 
-    margin-bottom: 7px;
-  }
+font-size:20px;
 
-  .contact-card p {
-    font-size: 12px;
+font-weight:700;
 
-    line-height: 1.4;
-  }
+margin:10px 0;
+
+}
+
+
+.contact-card p{
+
+font-size:15px;
+
+color:#777;
+
+}
 
 
   /* ================= FOOTER ================= */
@@ -3199,7 +3213,7 @@ body > * {
 .about-section,
 .contact-section {
   background-color: transparent !important;
-  background-image: none !important;
+
 }
 
 /* Navbar clean white */
@@ -3716,5 +3730,682 @@ body > * {
 
 }
 
+
+}
+/* ===============================
+ PREMIUM CONTACT DESIGN
+================================ */
+
+
+.contact-section{
+
+padding:90px 20px;
+
+text-align:center;
+
+background:
+radial-gradient(
+circle at top,
+rgba(255,90,31,0.08),
+transparent 40%
+),
+#ffffff;
+
+}
+
+
+
+/* HEADING */
+
+.contact-heading span{
+
+color:#ff5a1f;
+
+font-weight:700;
+
+letter-spacing:4px;
+
+font-size:14px;
+
+}
+
+
+
+.contact-heading h2{
+
+font-size:55px;
+
+font-weight:800;
+
+margin:15px 0;
+
+color:#111;
+
+}
+
+
+.contact-heading h2 b{
+
+color:#ff5a1f;
+
+}
+
+
+
+.contact-heading p{
+
+color:#777;
+
+font-size:17px;
+
+line-height:1.7;
+
+}
+
+
+
+/* ===============================
+ CONTACT CARDS
+================================ */
+
+
+.contact-container{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:35px;
+
+flex-wrap:nowrap;
+
+margin-top:60px;
+
+}
+
+
+
+/* CARD */
+
+
+.contact-card{
+
+width:230px;
+
+height:270px;
+
+background:
+rgba(255,255,255,0.85);
+
+
+border-radius:25px;
+
+
+display:flex;
+
+flex-direction:column;
+
+
+align-items:center;
+
+justify-content:center;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+border:1px solid rgba(255,90,31,0.15);
+
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,0.10);
+
+
+transition:.4s ease;
+
+
+backdrop-filter:blur(10px);
+
+}
+
+
+
+/* TOP ORANGE LINE */
+
+
+.contact-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:30px;
+
+width:90px;
+
+height:3px;
+
+background:#ff5a1f;
+
+border-radius:20px;
+
+}
+
+
+
+
+/* BOTTOM ORANGE LINE */
+
+
+.contact-card::after{
+
+content:"";
+
+position:absolute;
+
+bottom:0;
+
+right:30px;
+
+width:90px;
+
+height:3px;
+
+background:#ff5a1f;
+
+border-radius:20px;
+
+}
+
+
+
+/* HOVER */
+
+
+.contact-card:hover{
+
+transform:translateY(-12px);
+
+
+box-shadow:
+
+0 30px 70px rgba(255,90,31,0.25);
+
+}
+
+
+
+
+/* ICON */
+
+
+.contact-icon{
+
+
+width:75px;
+
+height:75px;
+
+
+border-radius:50%;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+font-size:38px;
+
+
+background:white;
+
+
+margin-bottom:20px;
+
+
+box-shadow:
+
+0 12px 35px rgba(0,0,0,.15);
+
+
+}
+
+
+
+
+/* TITLE */
+
+
+.contact-card h3{
+
+
+font-size:20px;
+
+font-weight:700;
+
+
+margin:8px 0;
+
+
+}
+
+
+
+.contact-card h3::after{
+
+
+content:"";
+
+
+display:block;
+
+
+width:40px;
+
+
+height:3px;
+
+
+background:#ff5a1f;
+
+
+margin:12px auto;
+
+
+border-radius:20px;
+
+
+}
+
+
+
+
+/* TEXT */
+
+
+.contact-card p{
+
+
+color:#777;
+
+
+font-size:15px;
+
+
+}
+
+
+
+/* BUTTON TEXT */
+
+
+.contact-card span{
+
+
+margin-top:15px;
+
+
+color:#ff5a1f;
+
+
+font-weight:600;
+
+
+font-size:15px;
+
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.contact-container{
+
+
+flex-wrap:wrap;
+
+
+}
+
+
+.contact-card{
+
+
+width:90%;
+
+
+}
+
+
+.contact-heading h2{
+
+
+font-size:40px;
+
+
+}
+
+
+}
+
+
+/* scroll animation */
+
+
+.reveal{
+
+opacity:0;
+
+transform:
+translateY(60px);
+
+transition:.8s ease;
+
+}
+
+
+
+.reveal.active{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+/* ===============================
+ PREMIUM FOOTER
+================================ */
+
+
+.premium-footer{
+
+background:#111;
+
+color:white;
+
+margin-top:60px;
+
+padding:50px 60px 20px;
+
+border-top:
+2px solid #ff5a1f;
+
+border-radius:0 0 15px 15px;
+
+}
+
+
+
+.footer-container{
+
+max-width:1200px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+gap:40px;
+
+position:relative;
+
+}
+
+
+
+
+.footer-column{
+
+flex:1;
+
+}
+
+
+
+.brand-column h4{
+
+color:#ff5a1f;
+
+margin:15px 0;
+
+font-size:16px;
+
+}
+
+
+
+.footer-column p{
+
+color:#ccc;
+
+font-size:14px;
+
+line-height:1.8;
+
+}
+
+
+
+.footer-column h3{
+
+color:#ff5a1f;
+
+font-size:18px;
+
+margin-bottom:20px;
+
+position:relative;
+
+}
+
+
+
+.footer-column h3::after{
+
+content:"";
+
+display:block;
+
+width:35px;
+
+height:3px;
+
+background:#ff5a1f;
+
+margin-top:8px;
+
+}
+
+
+
+.footer-links{
+
+border-left:
+
+1px solid #333;
+
+padding-left:50px;
+
+border-right:
+
+1px solid #333;
+
+}
+
+
+
+.footer-links a{
+
+display:block;
+
+color:#ddd;
+
+text-decoration:none;
+
+margin:14px 0;
+
+transition:.3s;
+
+}
+
+
+
+.footer-links a:hover{
+
+color:#ff5a1f;
+
+transform:translateX(8px);
+
+}
+
+
+
+
+
+.footer-logo{
+
+object-fit:contain;
+
+}
+
+
+
+.social-icons{
+
+display:flex;
+
+gap:15px;
+
+margin-top:25px;
+
+}
+
+
+
+.social-icons a{
+
+width:38px;
+
+height:38px;
+
+border-radius:50%;
+
+border:1px solid #444;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+text-decoration:none;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+
+
+.social-icons a:hover{
+
+background:#ff5a1f;
+
+border-color:#ff5a1f;
+
+}
+
+
+
+
+
+.footer-food-icon{
+
+font-size:90px;
+
+opacity:.15;
+
+align-self:center;
+
+}
+
+
+
+.footer-bottom{
+
+border-top:
+
+1px solid #333;
+
+margin-top:30px;
+
+padding-top:15px;
+
+text-align:center;
+
+color:#888;
+
+font-size:13px;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.footer-container{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+
+.footer-links{
+
+border-left:none;
+
+border-right:none;
+
+padding-left:0;
+
+}
+
+
+.social-icons{
+
+justify-content:center;
+
+}
+
+.footer-food-icon{
+
+display:none;
+
+}
 
 }
