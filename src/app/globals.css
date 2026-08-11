@@ -3213,3 +3213,508 @@ body > * {
 .order-popup {
   background: #ffffff !important;
 }
+.nav-logo {
+  object-fit: contain;
+}
+.hero-logo {
+  object-fit: contain;
+  animation: logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+/* ================= PREMIUM ORDER BUTTON ANIMATION ================= */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  animation: buttonPulse 3s infinite;
+}
+
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.45),
+    transparent
+  );
+
+  transition: 0.6s;
+}
+
+
+.btn:hover::before {
+  left: 120%;
+}
+
+
+@keyframes buttonPulse {
+
+  0%,100% {
+    box-shadow: 
+    0 6px 18px rgba(255,90,31,0.25);
+  }
+
+  50% {
+    box-shadow:
+    0 8px 30px rgba(255,90,31,0.45);
+  }
+
+}
+/* ================= PREMIUM CATEGORY CARD HOVER ================= */
+
+.card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+
+/* Light shine effect */
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.7),
+    transparent
+  );
+
+  transition: 0.6s ease;
+}
+
+
+/* Hover */
+
+.card:hover {
+
+  transform: translateY(-12px) scale(1.03);
+
+  box-shadow:
+  0 18px 40px rgba(255,90,31,0.18);
+
+  border-color: #ff5a1f;
+
+}
+
+
+.card:hover::before {
+
+  left: 130%;
+
+}
+
+
+/* Icon animation */
+
+.card .icon {
+
+  transition: 
+  transform 0.35s ease,
+  background 0.35s ease;
+
+}
+
+
+.card:hover .icon {
+
+  transform: scale(1.15) rotate(5deg);
+
+  background: #fff0e8;
+
+}
+
+
+/* Heading */
+
+.card h3 {
+
+  transition: 0.3s ease;
+
+}
+
+
+.card:hover h3 {
+
+  color: #ff5a1f;
+
+}
+/* ================= SCROLL REVEAL ANIMATION ================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+
+.reveal.active {
+
+  opacity: 1;
+  transform: translateY(0);
+
+}
+
+
+/* Different delays for cards */
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+/* =========================
+   CARD HOVER ANIMATION
+========================= */
+
+
+.card{
+
+  transition:
+  transform .35s ease,
+  box-shadow .35s ease;
+
+}
+
+
+.card:hover{
+
+  transform:
+  translateY(-12px)
+  scale(1.03);
+
+  box-shadow:
+  0 20px 40px rgba(0,0,0,0.15);
+
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+  translateY(50px);
+
+  transition:
+  all .8s ease;
+
+}
+
+
+.reveal.active{
+
+  opacity:1;
+
+  transform:
+  translateY(0);
+
+}
+/* ==============================
+   CARD HOVER ANIMATION
+============================== */
+
+.card {
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border 0.35s ease;
+  cursor: pointer;
+}
+
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 
+  0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+/* ==============================
+   SCROLL REVEAL ANIMATION
+============================== */
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ==============================
+   SECTION ANIMATION DELAY
+============================== */
+
+.about-section,
+.contact-section,
+.footer {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+
+@keyframes fadeUp {
+
+  from {
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+/* =================================
+   HERO PREMIUM ANIMATION
+================================= */
+
+
+/* Banner Fade */
+
+.banner {
+  animation: bannerFade 1.5s ease;
+}
+
+
+@keyframes bannerFade {
+
+  from {
+    opacity:0;
+    transform:scale(1.05);
+  }
+
+  to {
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
+
+
+
+/* Hero Content */
+
+.hero-text {
+
+  animation: heroAppear 1.2s ease forwards;
+
+}
+
+
+@keyframes heroAppear {
+
+  from {
+
+    opacity:0;
+    transform:translateY(50px);
+
+  }
+
+
+  to {
+
+    opacity:1;
+    transform:translateY(0);
+
+  }
+
+}
+
+
+
+/* Animated Logo Floating */
+
+.hero-logo-img {
+
+  animation:
+  logoFloat 3s ease-in-out infinite;
+
+}
+
+
+
+@keyframes logoFloat {
+
+
+  0% {
+
+    transform:
+    translateY(0)
+    scale(1);
+
+  }
+
+
+  50% {
+
+    transform:
+    translateY(-10px)
+    scale(1.05);
+
+  }
+
+
+  100% {
+
+    transform:
+    translateY(0)
+    scale(1);
+
+  }
+
+}
+
+
+
+/* Tagline Animation */
+
+.hero-text p {
+
+ animation:
+ taglineShow 1.5s ease;
+
+}
+
+
+@keyframes taglineShow {
+
+
+ from {
+
+ opacity:0;
+ letter-spacing:8px;
+
+ }
+
+
+ to {
+
+ opacity:1;
+ letter-spacing:normal;
+
+ }
+
+}
+
+
+
+
+/* Order Button Premium */
+
+.btn {
+
+
+ animation:
+ buttonPulse 2.5s infinite;
+
+
+}
+
+
+
+@keyframes buttonPulse {
+
+
+0% {
+
+ box-shadow:
+ 0 0 0 0 rgba(255,90,31,0.5);
+
+}
+
+
+70% {
+
+ box-shadow:
+ 0 0 0 18px rgba(255,90,31,0);
+
+}
+
+
+100% {
+
+ box-shadow:
+ 0 0 0 0 rgba(255,90,31,0);
+
+}
+
+
+}
+
+
+
+/* Mobile Smooth */
+
+@media(max-width:768px){
+
+.hero-text {
+
+ animation-duration:
+ 1s;
+
+}
+
+
+.hero-logo img {
+
+ animation-duration:
+ 3.5s;
+
+}
+
+
+}

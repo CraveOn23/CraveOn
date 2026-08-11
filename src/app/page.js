@@ -4,6 +4,47 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+
+  const revealElements =
+    document.querySelectorAll(".reveal");
+
+
+  const observer =
+    new IntersectionObserver(
+      (entries)=>{
+
+        entries.forEach((entry)=>{
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add(
+              "active"
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold:0.15,
+      }
+    );
+
+
+  revealElements.forEach((el)=>{
+    observer.observe(el);
+  });
+
+
+  return ()=>{
+    observer.disconnect();
+  };
+
+
+}, []);
+
   /* =========================================================
      MENU ITEMS
   ========================================================= */
@@ -415,13 +456,13 @@ Thank you for ordering from *CraveOn* ❤️`;
 
         <div className="logo">
 
-          <Image
-            src="/images/CraveOn The Cloud Kitchen.png"
-            alt="CraveOn Logo"
-            width={120}
-            height={60}
-            className="brand-logo"
-          />
+         <Image
+src="/images/CraveOn_Animated_Premium.webp"
+alt="CraveOn Logo"
+width={220}
+height={100}
+className="hero-logo-img"
+/>
 
         </div>
 
@@ -493,12 +534,13 @@ Thank you for ordering from *CraveOn* ❤️`;
           <div className="hero-logo">
 
             <Image
-              src="/images/CraveOn The Cloud Kitchen.png"
-              alt="CraveOn Logo"
-              width={220}
-              height={100}
-              className="hero-brand-logo"
-            />
+  src="/images/CraveOn_Animated_Premium.webp"
+  alt="CraveOn Logo"
+  width={220}
+  height={100}
+  className="hero-logo"
+  priority
+/>
 
           </div>
 
@@ -528,10 +570,7 @@ Thank you for ordering from *CraveOn* ❤️`;
           OUR MENU
       ===================================================== */}
 
-      <section
-        className="menu-section"
-        id="menu"
-      >
+      <section className="menu-section reveal" id="menu">
 
         {/* OUR MENU TITLE */}
 
@@ -565,14 +604,16 @@ Thank you for ordering from *CraveOn* ❤️`;
 
         {/* MENU CARDS */}
 
-        <div className="card-container">
+        <div 
+        className="card-container">
 
           {categories.map(
             (category) => (
 
               <div
-                className="card"
-                key={category.name}
+ className="card reveal"
+ key={category.name}
+ 
                 onClick={() =>
                   setSelectedSpecial(
                     category.name
@@ -1296,9 +1337,9 @@ Thank you for ordering from *CraveOn* ❤️`;
       ===================================================== */}
 
       <section
-        id="about"
-        className="about-section"
-      >
+ id="about"
+ className="about-section reveal"
+>
 
         <h2>
           About CraveOn
@@ -1339,9 +1380,9 @@ Thank you for ordering from *CraveOn* ❤️`;
       ===================================================== */}
 
       <section
-        id="contact"
-        className="contact-section"
-      >
+ id="contact"
+ className="contact-section reveal"
+>
 
         <h2>
           Contact Us
@@ -1468,7 +1509,7 @@ Thank you for ordering from *CraveOn* ❤️`;
           FOOTER
       ===================================================== */}
 
-      <footer className="footer">
+      <footer className="footer reveal">
 
         <div className="footer-content">
 
