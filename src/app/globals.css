@@ -239,20 +239,17 @@ body::before {
 
 
 
+/* MOBILE BANNER FIX */
+
 .banner {
 
+  width:100%;
 
- width:100%;
+  height:auto;
 
+  object-fit:contain;
 
- height:600px;
-
-
- object-fit:cover;
-
-
- display:block;
-
+  display:block;
 
  animation:
  bannerShow 1.2s ease;
@@ -1783,11 +1780,16 @@ font-size:14px;
 
 .banner {
 
-height:260px;
+  width:100%;
 
-object-fit:cover;
+  height:230px;
+
+  object-fit:contain;
+
+  background:#fff;
 
 }
+
 
 
 
