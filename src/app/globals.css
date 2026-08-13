@@ -2356,14 +2356,35 @@ line-height:1.7;
 
 
 
-.footer-food-icon{
+.footer-food-icon {
+  display: flex;
 
-font-size:45px;
+  align-items: center;
+  justify-content: center;
 
-opacity:.3;
+  width: 100%;
 
+  opacity: 1;
 }
 
+.footer-food-image {
+  width: 140px;
+  height: 140px;
+
+  object-fit: contain;
+
+  opacity: 0.45;
+
+  filter: brightness(1.2) contrast(1.05);
+
+  transition: 0.3s ease;
+}
+
+.footer-food-image:hover {
+  opacity: 0.75;
+
+  transform: scale(1.05);
+}
 
 
 .footer-bottom{
