@@ -2927,56 +2927,50 @@ Fresh Food • Fast Delivery • Cloud Kitchen
 
 <div className="social-icons">
 
+  {/* INSTAGRAM */}
+  <a
+    href="https://www.instagram.com/craveonn_/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="CraveOn Instagram"
+  >
+    <Image
+      src="/images/instagram-icon.png"
+      alt="Instagram"
+      width={45}
+      height={45}
+    />
+  </a>
 
 
-<a
-
-href="https://www.instagram.com/craveonn_/"
-
-target="_blank"
-
-rel="noopener noreferrer"
-
->
-
-◎
-
-</a>
-
-
-
+  {/* WHATSAPP */}
+  <a
+    href="https://wa.me/919079540030"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="CraveOn WhatsApp"
+  >
+    <Image
+      src="/images/whatsapp-icon.png"
+      alt="WhatsApp"
+      width={45}
+      height={45}
+    />
+  </a>
 
 
-<a
-
-href="https://wa.me/919079540030"
-
-target="_blank"
-
-rel="noopener noreferrer"
-
->
-
-◉
-
-</a>
-
-
-
-
-
-<a
-
-href="tel:+919079540030"
-
->
-
-☎
-
-</a>
-
-
-
+  {/* PHONE */}
+  <a
+    href="tel:+919079540030"
+    aria-label="Call CraveOn"
+  >
+    <Image
+      src="/images/phone-icon.png"
+      alt="Call CraveOn"
+      width={45}
+      height={45}
+    />
+  </a>
 
 </div>
 
