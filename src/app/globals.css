@@ -2924,3 +2924,25 @@ width:100%;
 
 
 }
+/* ===============================
+   FOOTER FOOD ICON - MOBILE FIX
+================================ */
+
+@media (max-width: 600px) {
+  .footer-food-icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+
+  .footer-food-image {
+    display: block !important;
+    width: 110px;
+    height: auto;
+    object-fit: contain;
+  }
+}
