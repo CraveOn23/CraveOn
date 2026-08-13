@@ -3082,9 +3082,12 @@ Let's connect!
 
 
 <div className="footer-food-icon">
-  <img
+  <Image
     src="/images/footer-food-icon.png"
-    alt="CraveOn Food"
+    alt="Coffee & Burger"
+    width={120}
+    height={120}
+    className="footer-food-image"
   />
 </div>
 
