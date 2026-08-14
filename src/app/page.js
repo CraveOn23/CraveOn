@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { supabase } from "../lib/supabase";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
   const [reviewText, setReviewText] = useState("");
   const [reviewRating, setReviewRating] = useState(5);
   const [reviewIndex, setReviewIndex] = useState(0);
+  const [reviews, setReviews] = useState([]);
 
 /* =========================
    REVEAL ANIMATION
@@ -21,6 +23,21 @@ export default function Home() {
 
 
 useEffect(()=>{
+  const loadReviews = async () => {
+    const { data, error } = await supabase
+      .from("reviews")
+      .select("id, name, rating, review, created_at")
+      .eq("approved", true)
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("Reviews fetch error:", error);
+      return;
+    }
+    setReviews(data || []);
+    setReviewIndex(0);
+  };
+  loadReviews();
 
 const revealElements =
 document.querySelectorAll(".reveal");
@@ -627,20 +644,24 @@ return total + itemTotal + addonTotal;
    REVIEW SLIDER CONTROLS
 ========================= */
 
-const totalReviews = 4;
+const totalReviews = reviews.length;
 
 const nextReview = () => {
+  if (reviews.length === 0) return;
+
   setReviewIndex((current) =>
-    current === totalReviews - 1
+    current === reviews.length - 1
       ? 0
       : current + 1
   );
 };
 
 const previousReview = () => {
+  if (reviews.length === 0) return;
+
   setReviewIndex((current) =>
     current === 0
-      ? totalReviews - 1
+      ? reviews.length - 1
       : current - 1
   );
 };
@@ -649,7 +670,7 @@ const previousReview = () => {
    REVIEW SUBMIT
 ========================= */
 
-const submitReview = () => {
+const submitReview = async () => {
 
   if (!reviewName.trim()) {
     alert("Please enter your name.");
@@ -663,6 +684,27 @@ const submitReview = () => {
 
   if (reviewRating < 1) {
     alert("Please select a rating.");
+    return;
+  }
+
+  const { error } = await supabase
+    .from("reviews")
+    .insert([
+      {
+        name: reviewName.trim(),
+        rating: reviewRating,
+        review: reviewText.trim(),
+        approved: false,
+      },
+    ]);
+
+  if (error) {
+    console.error("Review submission error:", error);
+
+    alert(
+      "Something went wrong while submitting your review. Please try again."
+    );
+
     return;
   }
 
@@ -2620,51 +2662,32 @@ an amazing experience.
 
   <div className="reviews-container">
 
-    {[
-      {
-        text: "“Cold coffee bahut tasty thi! Fresh aur perfect blend tha. Definitely ordering again.”",
-        name: "Customer Name"
-      },
-      {
-        text: "“Tandoori Paneer Sandwich awesome tha. Taste ekdum mast!”",
-        name: "Customer Name"
-      },
-      {
-        text: "“Food fresh tha aur delivery bhi achhi thi. CraveOn se phir order karunga.”",
-        name: "Customer Name"
-      },
-      {
-        text: "“Amazing taste and really good quality. Highly recommended!”",
-        name: "Customer Name"
-      }
-    ].map((review, index) => (
+    {reviews.map((review, index) => (
 
-      index === reviewIndex && (
+  index === reviewIndex && (
 
-        <div
-          className="review-card"
-          key={index}
-        >
+    <div
+      className="review-card"
+      key={review.id}
+    >
 
-          <div className="review-stars">
-            ★★★★★
-          </div>
+      <div className="review-stars">
+        {"★".repeat(review.rating)}
+      </div>
 
+      <p>
+        “{review.review}”
+      </p>
 
-          <p>
-            {review.text}
-          </p>
+      <strong>
+        — {review.name}
+      </strong>
 
+    </div>
 
-          <strong>
-            — {review.name}
-          </strong>
+  )
 
-        </div>
-
-      )
-
-    ))}
+))}
 
   </div>
 
@@ -2685,7 +2708,7 @@ an amazing experience.
 
 <div className="review-dots">
 
-  {[0, 1, 2, 3].map((index) => (
+  {reviews.map((_, index) => (
 
     <button
       type="button"
