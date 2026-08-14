@@ -6,6 +6,14 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
 
+ // =========================
+  // CUSTOMER REVIEWS
+  // =========================
+
+  const [reviewName, setReviewName] = useState("");
+  const [reviewText, setReviewText] = useState("");
+  const [reviewRating, setReviewRating] = useState(5);
+  const [reviewIndex, setReviewIndex] = useState(0);
 
 /* =========================
    REVEAL ANIMATION
@@ -614,6 +622,60 @@ return total + itemTotal + addonTotal;
 0
 
 );
+
+/* =========================
+   REVIEW SLIDER CONTROLS
+========================= */
+
+const totalReviews = 4;
+
+const nextReview = () => {
+  setReviewIndex((current) =>
+    current === totalReviews - 1
+      ? 0
+      : current + 1
+  );
+};
+
+const previousReview = () => {
+  setReviewIndex((current) =>
+    current === 0
+      ? totalReviews - 1
+      : current - 1
+  );
+};
+
+/* =========================
+   REVIEW SUBMIT
+========================= */
+
+const submitReview = () => {
+
+  if (!reviewName.trim()) {
+    alert("Please enter your name.");
+    return;
+  }
+
+  if (!reviewText.trim()) {
+    alert("Please write your review.");
+    return;
+  }
+
+  if (reviewRating < 1) {
+    alert("Please select a rating.");
+    return;
+  }
+
+  alert(
+    "Thank you for your review! ❤️ Your review will be visible after approval."
+  );
+
+  setReviewName("");
+  setReviewText("");
+  setReviewRating(5);
+};
+
+
 /* =========================
    PLACE ORDER
 ========================= */
@@ -2517,7 +2579,220 @@ an amazing experience.
 
 
 
+{/* =========================
+    CUSTOMER REVIEWS
+========================= */}
 
+<section className="customer-reviews" id="reviews">
+
+  <div className="reviews-heading">
+
+    <span className="reviews-label">
+      CUSTOMER LOVE
+    </span>
+
+    <h2>
+      What Our Customers Say
+    </h2>
+
+    <p>
+      Real reviews from our customers who love our food.
+    </p>
+
+  </div>
+
+
+  {/* =========================
+    REVIEW SLIDER
+========================= */}
+
+<div className="reviews-slider">
+
+  <button
+    type="button"
+    className="review-arrow review-arrow-left"
+    aria-label="Previous review"
+    onClick={previousReview}
+  >
+    ←
+  </button>
+
+
+  <div className="reviews-container">
+
+    {[
+      {
+        text: "“Cold coffee bahut tasty thi! Fresh aur perfect blend tha. Definitely ordering again.”",
+        name: "Customer Name"
+      },
+      {
+        text: "“Tandoori Paneer Sandwich awesome tha. Taste ekdum mast!”",
+        name: "Customer Name"
+      },
+      {
+        text: "“Food fresh tha aur delivery bhi achhi thi. CraveOn se phir order karunga.”",
+        name: "Customer Name"
+      },
+      {
+        text: "“Amazing taste and really good quality. Highly recommended!”",
+        name: "Customer Name"
+      }
+    ].map((review, index) => (
+
+      index === reviewIndex && (
+
+        <div
+          className="review-card"
+          key={index}
+        >
+
+          <div className="review-stars">
+            ★★★★★
+          </div>
+
+
+          <p>
+            {review.text}
+          </p>
+
+
+          <strong>
+            — {review.name}
+          </strong>
+
+        </div>
+
+      )
+
+    ))}
+
+  </div>
+
+
+  <button
+    type="button"
+    className="review-arrow review-arrow-right"
+    aria-label="Next review"
+    onClick={nextReview}
+  >
+    →
+  </button>
+
+</div>
+
+
+{/* REVIEW SLIDER DOTS */}
+
+<div className="review-dots">
+
+  {[0, 1, 2, 3].map((index) => (
+
+    <button
+      type="button"
+      key={index}
+      className={
+        index === reviewIndex
+          ? "review-dot active"
+          : "review-dot"
+      }
+      aria-label={`Show review ${index + 1}`}
+      onClick={() => setReviewIndex(index)}
+    />
+
+  ))}
+
+</div>
+
+
+
+
+  {/* SHARE YOUR EXPERIENCE */}
+
+  <div className="review-submit-box">
+
+    <h3>
+      ❤️ Share Your Experience
+    </h3>
+
+    <p>
+      Loved your order? Tell us about your experience.
+    </p>
+
+
+    <div className="review-form">
+
+
+      <input
+        type="text"
+        placeholder="Your Name"
+        value={reviewName}
+        onChange={(e) =>
+          setReviewName(e.target.value)
+        }
+      />
+
+
+      <div className="review-rating">
+
+        <span>
+          Your Rating
+        </span>
+
+        <div className="rating-stars">
+
+          {[1, 2, 3, 4, 5].map((star) => (
+
+            <button
+              key={star}
+              type="button"
+              onClick={() =>
+                setReviewRating(star)
+              }
+              className={
+                star <= reviewRating
+                  ? "rating-star active"
+                  : "rating-star"
+              }
+            >
+              ★
+            </button>
+
+          ))}
+
+        </div>
+
+      </div>
+
+
+      <textarea
+        placeholder="Write your review..."
+        value={reviewText}
+        onChange={(e) =>
+          setReviewText(e.target.value)
+        }
+      />
+
+
+      <button
+  type="button"
+  className="submit-review-btn"
+  onClick={submitReview}
+>
+  Submit Review
+</button>
+
+
+      <small>
+        Your review will be visible after our approval.
+      </small>
+
+
+    </div>
+
+  </div>
+
+
+</section>
 
 
 {/* ===============================
