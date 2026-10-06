@@ -201,6 +201,19 @@ const specialItems = {
 
 ],
 
+"Pizza": [
+  { name: "Margherita Pizza", price: 99 },
+
+  { name: "Cheese Corn Pizza", price: 129 },
+
+  { name: "Veggie Pizza", price: 139 },
+
+  { name: "Paneer Tikka Pizza", price: 159 },
+
+  { name: "Farmhouse Pizza", price: 169 }
+
+],
+
 
 };
 
@@ -250,7 +263,11 @@ icon:"🍹",
 text:"Refreshing drinks",
 },
 
-
+{
+name: "Pizza",
+icon: "🍕",
+text: "Hot & cheesy",
+},
 ];
 
 
@@ -279,6 +296,15 @@ price:20
 
 
 const sandwichAddOns=[
+
+{
+name:"Extra Cheese",
+price:20
+}
+
+];
+
+const pizzaAddOns=[
 
 {
 name:"Extra Cheese",
@@ -1449,6 +1475,14 @@ selectedSpecial==="Sandwich"
 ?
 
 sandwichAddOns
+
+:
+
+selectedSpecial==="Pizza"
+
+?
+
+pizzaAddOns
 
 :
 
