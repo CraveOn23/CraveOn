@@ -2019,7 +2019,7 @@ setCustomerAddress(e.target.value)
 
 
 <p className="delivery-charge-note">
-  Delivery within 5 km is free. For locations beyond 5 km,
+  Delivery within 3 km is free. For locations beyond 5 km,
   an additional ₹50 delivery charge will be added to your order total.
 </p>
 
