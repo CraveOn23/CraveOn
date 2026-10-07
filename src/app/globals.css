@@ -3773,20 +3773,35 @@ width:100%;
 
 .combo-card {
   position: relative;
-  padding: 28px;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  border-radius: 24px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 26px;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.03);
   overflow: hidden;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
+.combo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #111;
+  opacity: 0.9;
+}
+
 .combo-card:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.10),
+    0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* =========================
@@ -3796,13 +3811,16 @@ width:100%;
 .combo-type {
   display: inline-flex;
   align-items: center;
-  padding: 7px 12px;
+  justify-content: center;
+  padding: 7px 13px;
   border-radius: 50px;
   background: #f4e7dc;
+  color: #111;
   font-size: 10px;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* =========================
@@ -3810,10 +3828,11 @@ width:100%;
 ========================= */
 
 .combo-card h3 {
-  margin: 17px 0 22px;
-  font-size: 24px;
+  margin: 18px 0 22px;
+  font-size: 25px;
   line-height: 1.2;
   font-weight: 900;
+  letter-spacing: -0.4px;
 }
 
 /* =========================
@@ -3832,8 +3851,8 @@ width:100%;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  padding-bottom: 11px;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.13);
+  padding: 11px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.12);
   font-size: 14px;
 }
 
@@ -3843,6 +3862,7 @@ width:100%;
 
 .combo-item strong {
   white-space: nowrap;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -3861,24 +3881,27 @@ width:100%;
 .combo-original-price {
   font-size: 14px;
   text-decoration: line-through;
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 .combo-price {
-  font-size: 29px;
+  font-size: 30px;
   line-height: 1;
   font-weight: 900;
+  letter-spacing: -0.5px;
 }
 
 .combo-save {
   display: inline-flex;
   align-items: center;
-  padding: 6px 9px;
-  border-radius: 7px;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 8px;
   background: #e9f7e9;
   font-size: 11px;
   font-weight: 900;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
 }
 
 /* =========================
@@ -3888,22 +3911,31 @@ width:100%;
 .combo-order-btn {
   width: 100%;
   padding: 14px 18px;
-  border: none;
+  border: 1px solid #111;
   border-radius: 13px;
   background: #111;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
   cursor: pointer;
   transition:
     transform 0.2s ease,
-    opacity 0.2s ease;
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .combo-order-btn:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
+  transform: translateY(-2px);
+  background: #fff;
+  color: #111;
+}
+
+.combo-order-btn {
+  padding: 10px 8px;
+  border-radius: 10px;
+  font-size: 10px;
 }
 
 /* =========================
@@ -3960,20 +3992,23 @@ width:100%;
   }
 
   .combo-card {
-    padding: 16px;
-    border-radius: 18px;
-  }
+  padding: 16px;
+  border-radius: 18px;
+}
 
   .combo-type {
-    padding: 5px 8px;
-    font-size: 8px;
-    letter-spacing: 0.5px;
-  }
+  padding: 5px 8px;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+}
+
 
   .combo-card h3 {
-    margin: 12px 0 15px;
-    font-size: 17px;
-  }
+  margin: 12px 0 15px;
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
 
   .combo-items {
     gap: 8px;
@@ -3981,37 +4016,32 @@ width:100%;
   }
 
   .combo-item {
-    gap: 7px;
-    padding-bottom: 8px;
-    font-size: 11px;
-  }
+  gap: 7px;
+  padding: 8px 0;
+  font-size: 11px;
+}
 
-  .combo-item strong {
-    font-size: 11px;
-  }
+.combo-item strong {
+  font-size: 11px;
+}
 
   .combo-pricing {
-    gap: 6px;
-    margin-bottom: 15px;
-  }
+  gap: 6px;
+  margin-bottom: 15px;
+}
 
-  .combo-original-price {
-    font-size: 10px;
-  }
+.combo-original-price {
+  font-size: 10px;
+}
 
-  .combo-price {
-    font-size: 20px;
-  }
+.combo-price {
+  font-size: 20px;
+}
 
-  .combo-save {
-    padding: 4px 6px;
-    font-size: 8px;
-  }
-
-  .combo-order-btn {
-    padding: 10px 8px;
-    border-radius: 10px;
-    font-size: 10px;
-  }
+.combo-save {
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 8px;
+}
 
 }
