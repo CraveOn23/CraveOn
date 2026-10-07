@@ -3817,7 +3817,7 @@ width:100%;
   width: 390px;
   height: 270px;
   transform: translateY(-50%);
-  z-index: 1;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3844,6 +3844,14 @@ width:100%;
 
   opacity: 0;
   pointer-events: none;
+}
+
+.combo-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 28px;
 }
 
 .combo-hero-image-placeholder span {
