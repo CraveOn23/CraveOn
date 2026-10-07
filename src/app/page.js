@@ -223,82 +223,92 @@ const specialItems = {
 ========================= */
 
 const comboOffers = [
-
   {
-    name: "Coffee & Crunch",
-    items: [
-      { name: "Classic Frappe", price: 79 },
-      { name: "Mix Veg. Sandwich", price: 99 },
+    name:"Coffee & Crunch",
+    icon:"☕🥪",
+    image:"/combos/coffee-crunch.jpg.png",
+    items:[
+      {name:"Classic Frappe",price:79},
+      {name:"Mix Veg Sandwich",price:99}
     ],
-    originalPrice: 178,
-    comboPrice: 159,
-    save: 19,
-    type: "Budget Combo",
+    originalPrice:178,
+    comboPrice:159,
+    save:19,
+    type:"Budget Combo"
   },
 
   {
-    name: "Chill & Fill",
-    items: [
-      { name: "Classic Frappe", price: 79 },
-      { name: "Masala Maggi", price: 69 },
+    name:"Chill & Fill",
+    icon:"☕🍜",
+    image:"/combos/chill-fill.jpg.png",
+    items:[
+      {name:"Classic Frappe",price:79},
+      {name:"Masala Maggi",price:69}
     ],
-    originalPrice: 148,
-    comboPrice: 129,
-    save: 19,
-    type: "Budget Combo",
+    originalPrice:148,
+    comboPrice:129,
+    save:19,
+    type:"Budget Combo"
   },
 
   {
-    name: "Cafe Meal",
-    items: [
-      { name: "Classic Frappe", price: 79 },
-      { name: "Mix Veg. Sandwich", price: 99 },
-      { name: "Masala Maggi", price: 69 },
+    name:"Cafe Meal",
+    icon:"☕🥪🍜",
+    image:"/combos/cafe-meal.jpg.png",
+    items:[
+      {name:"Classic Frappe",price:79},
+      {name:"Mix Veg Sandwich",price:99},
+      {name:"Masala Maggi",price:69}
     ],
-    originalPrice: 247,
-    comboPrice: 219,
-    save: 28,
-    type: "Full Meal Combo",
+    originalPrice:247,
+    comboPrice:219,
+    save:28,
+    type:"Full Meal Combo"
   },
 
   {
-    name: "Pizza Chill Combo",
-    items: [
-      { name: "Classic Frappe", price: 79 },
-      { name: "Margherita Pizza", price: 99 },
+    name:"Pizza Chill Combo",
+    icon:"☕🍕",
+    image:"/combos/pizza-chill.jpg.png",
+    items:[
+      {name:"Classic Frappe",price:79},
+      {name:"Margherita Pizza",price:99}
     ],
-    originalPrice: 178,
-    comboPrice: 159,
-    save: 19,
-    type: "Budget Combo",
+    originalPrice:178,
+    comboPrice:159,
+    save:19,
+    type:"Budget Combo"
   },
 
   {
-    name: "Shake & Bite",
-    items: [
-      { name: "Oreo Shake", price: 99 },
-      { name: "Mix Veg. Sandwich", price: 99 },
+    name:"Shake & Bite",
+    icon:"🥤🥪",
+    image:"/combos/shake-bite.jpg.png",
+    items:[
+      {name:"Oreo Shake",price:99},
+      {name:"Mix Veg Sandwich",price:99}
     ],
-    originalPrice: 198,
-    comboPrice: 179,
-    save: 19,
-    type: "Budget Combo",
+    originalPrice:198,
+    comboPrice:179,
+    save:19,
+    type:"Budget Combo"
   },
 
   {
-    name: "Ultimate Crave Combo",
-    items: [
-      { name: "Classic Frappe", price: 79 },
-      { name: "Mix Veg. Sandwich", price: 99 },
-      { name: "Masala Maggi", price: 69 },
-      { name: "Virgin Mojito", price: 69 },
+    name:"Ultimate Crave Combo",
+    icon:"☕🥪🍜🥤",
+    image:"/combos/ultimate-crave.jpg.png",
+    items:[
+      {name:"Classic Frappe",price:79},
+      {name:"Mix Veg Sandwich",price:99},
+      {name:"Masala Maggi",price:69},
+      {name:"Virgin Mojito",price:69}
     ],
-    originalPrice: 316,
-    comboPrice: 279,
-    save: 37,
-    type: "Premium Combo",
-  },
-
+    originalPrice:316,
+    comboPrice:279,
+    save:37,
+    type:"Premium Combo"
+  }
 ];
 
 
@@ -1475,6 +1485,13 @@ View Items →
 
   <div className="combo-hero">
 
+    <div className="combo-hero-visual">
+  <div className="combo-hero-image-placeholder">
+    <span>COMBO</span>
+    <strong>VISUAL</strong>
+  </div>
+</div>
+
     <span className="combo-highlight">
       🔥 COMBO OFFERS
     </span>
@@ -1504,18 +1521,35 @@ View Items →
     {comboOffers.map((combo) => (
 
       <div
-        className="combo-card"
-        key={combo.name}
-      >
+  className="combo-card"
+  key={combo.name}
+>
 
-        <span className="combo-type">
-          {combo.type}
-        </span>
+  <div className="combo-card-visual">
+  {combo.image ? (
+    <Image
+      src={combo.image}
+      alt={combo.name}
+      width={600}
+      height={400}
+      className="combo-card-image"
+    />
+  ) : (
+    <div className="combo-card-image-placeholder">
+      <span>{combo.icon}</span>
+    </div>
+  )}
+</div>
 
-        <h3>
-          {combo.name}
-        </h3>
 
+  <span className="combo-type">
+    {combo.type}
+  </span>
+
+  <h3>
+    {combo.name}
+  </h3>
+  
         <div className="combo-items">
 
           {combo.items.map((item) => (
