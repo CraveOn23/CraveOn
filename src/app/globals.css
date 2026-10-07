@@ -3977,10 +3977,11 @@ width:100%;
 }
 
 .combo-card-image {
-  width: 100%;
-  height: 100%;
+  width: 92%;
+  height: 92%;
   object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
 .combo-card-image-placeholder {
