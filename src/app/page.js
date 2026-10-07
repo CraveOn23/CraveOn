@@ -1207,7 +1207,7 @@ className="hero-section"
 
 <Image
 
-src={banners[currentBanner]}
+src="/images/combo-banner.png"
 
 alt="CraveOn Cloud Kitchen"
 
