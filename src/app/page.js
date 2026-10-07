@@ -1486,10 +1486,13 @@ View Items →
   <div className="combo-hero">
 
     <div className="combo-hero-visual">
-  <div className="combo-hero-image-placeholder">
-    <span>COMBO</span>
-    <strong>VISUAL</strong>
-  </div>
+  <Image
+  src="/images/combo-banner.png"
+  alt="CraveOn Combo Offers"
+  width={1200}
+  height={500}
+  className="combo-hero-image"
+/>
 </div>
 
     <span className="combo-highlight">
