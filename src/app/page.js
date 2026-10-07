@@ -218,6 +218,88 @@ const specialItems = {
 };
 
 
+/* =========================
+   COMBO OFFERS
+========================= */
+
+const comboOffers = [
+
+  {
+    name: "Coffee & Crunch",
+    items: [
+      { name: "Classic Frappe", price: 79 },
+      { name: "Mix Veg. Sandwich", price: 99 },
+    ],
+    originalPrice: 178,
+    comboPrice: 159,
+    save: 19,
+    type: "Budget Combo",
+  },
+
+  {
+    name: "Chill & Fill",
+    items: [
+      { name: "Classic Frappe", price: 79 },
+      { name: "Masala Maggi", price: 69 },
+    ],
+    originalPrice: 148,
+    comboPrice: 129,
+    save: 19,
+    type: "Budget Combo",
+  },
+
+  {
+    name: "Cafe Meal",
+    items: [
+      { name: "Classic Frappe", price: 79 },
+      { name: "Mix Veg. Sandwich", price: 99 },
+      { name: "Masala Maggi", price: 69 },
+    ],
+    originalPrice: 247,
+    comboPrice: 219,
+    save: 28,
+    type: "Full Meal Combo",
+  },
+
+  {
+    name: "Pizza Chill Combo",
+    items: [
+      { name: "Classic Frappe", price: 79 },
+      { name: "Margherita Pizza", price: 99 },
+    ],
+    originalPrice: 178,
+    comboPrice: 159,
+    save: 19,
+    type: "Budget Combo",
+  },
+
+  {
+    name: "Shake & Bite",
+    items: [
+      { name: "Oreo Shake", price: 99 },
+      { name: "Mix Veg. Sandwich", price: 99 },
+    ],
+    originalPrice: 198,
+    comboPrice: 179,
+    save: 19,
+    type: "Budget Combo",
+  },
+
+  {
+    name: "Ultimate Crave Combo",
+    items: [
+      { name: "Classic Frappe", price: 79 },
+      { name: "Mix Veg. Sandwich", price: 99 },
+      { name: "Masala Maggi", price: 69 },
+      { name: "Virgin Mojito", price: 69 },
+    ],
+    originalPrice: 316,
+    comboPrice: 279,
+    save: 37,
+    type: "Premium Combo",
+  },
+
+];
 
 
 
@@ -510,8 +592,30 @@ return updated;
 
 };
 
+const addComboToCart = (combo) => {
 
+  setCart((prev) => {
 
+    const existingCombo = prev[combo.name];
+
+    return {
+      ...prev,
+
+      [combo.name]: {
+        price: combo.comboPrice,
+        quantity: (existingCombo?.quantity || 0) + 1,
+        category: "Combo",
+        addOns: {},
+        isCombo: true,
+        comboItems: combo.items,
+      },
+    };
+
+  });
+
+  setShowCart(true);
+
+};
 
 
 const toggleItemAddOn=(
@@ -809,46 +913,45 @@ return;
 
 const orderDetails = cartItems
 
-.map(([name,item])=>{
+.map(([name, item]) => {
 
+  let details =
+    `${item.quantity} × ${name} = ₹${
+      item.price * item.quantity
+    }`;
 
-let details =
+  // COMBO ITEMS
+  if (item.isCombo && item.comboItems) {
 
-`${item.quantity} × ${name} = ₹${
-item.price * item.quantity
-}`;
+    details += "\n   Includes:";
 
+    item.comboItems.forEach((comboItem) => {
 
+      details +=
+        `\n   • ${comboItem.name} × ${item.quantity}`;
 
-Object.entries(
-item.addOns || {}
-)
+    });
 
-.forEach(
-([addonName,addon])=>{
+  }
 
+// NORMAL ITEM ADD-ONS
+Object.entries(item.addOns || {})
+  .forEach(([addonName, addon]) => {
 
-details +=
+    details +=
+      `\n   + Extra: ${addonName} × ${
+        item.quantity
+      } = ₹${
+        addon.price * item.quantity
+      }`;
 
-`\n + ${addonName} × ${
-item.quantity
-} = ₹${
-addon.price * item.quantity
-}`;
+  });
 
-
-});
-
-
-
-return details;
-
-
+  return details;
 
 })
 
 .join("\n\n");
-
 
 
 
@@ -1364,6 +1467,109 @@ View Items →
 </section>
 
 
+{/* =========================
+        COMBO OFFERS
+========================= */}
+
+<section className="combo-section reveal" id="combos">
+
+  <div className="combo-hero">
+
+    <span className="combo-highlight">
+      🔥 COMBO OFFERS
+    </span>
+
+    <h2>
+      More Craving. More Saving.
+    </h2>
+
+    <p>
+      Handpicked combos starting from ₹129
+    </p>
+
+    <a
+      href="#combo-list"
+      className="combo-view-btn"
+    >
+      VIEW COMBOS →
+    </a>
+
+  </div>
+
+  <div
+    className="combo-container"
+    id="combo-list"
+  >
+
+    {comboOffers.map((combo) => (
+
+      <div
+        className="combo-card"
+        key={combo.name}
+      >
+
+        <span className="combo-type">
+          {combo.type}
+        </span>
+
+        <h3>
+          {combo.name}
+        </h3>
+
+        <div className="combo-items">
+
+          {combo.items.map((item) => (
+
+            <div
+              className="combo-item"
+              key={item.name}
+            >
+
+              <span>
+                {item.name}
+              </span>
+
+              <strong>
+                ₹{item.price}
+              </strong>
+
+            </div>
+
+          ))}
+
+        </div>
+
+        <div className="combo-pricing">
+
+          <span className="combo-original-price">
+            ₹{combo.originalPrice}
+          </span>
+
+          <strong className="combo-price">
+            ₹{combo.comboPrice}
+          </strong>
+
+          <span className="combo-save">
+            SAVE ₹{combo.save}
+          </span>
+
+        </div>
+
+        <button
+          type="button"
+          className="combo-order-btn"
+          onClick={() => addComboToCart(combo)}
+        >
+          ADD COMBO
+        </button>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</section>
 
 
 

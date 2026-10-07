@@ -3685,3 +3685,333 @@ width:100%;
   }
 
 }
+/* =========================
+   COMBO OFFERS - PREMIUM
+========================= */
+
+.combo-section {
+  position: relative;
+  padding: 90px 20px;
+  background: #fff8f2;
+  overflow: hidden;
+}
+
+/* =========================
+   COMBO HERO
+========================= */
+
+.combo-hero {
+  max-width: 850px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.combo-highlight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 18px;
+  margin-bottom: 18px;
+  border-radius: 50px;
+  background: #111;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.combo-hero h2 {
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.combo-hero p {
+  margin: 14px 0 25px;
+  font-size: 17px;
+  opacity: 0.7;
+}
+
+.combo-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 50px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.combo-view-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.88;
+}
+
+/* =========================
+   COMBO GRID
+========================= */
+
+.combo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* =========================
+   COMBO CARD
+========================= */
+
+.combo-card {
+  position: relative;
+  padding: 28px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.combo-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   COMBO TYPE
+========================= */
+
+.combo-type {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 50px;
+  background: #f4e7dc;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   COMBO NAME
+========================= */
+
+.combo-card h3 {
+  margin: 17px 0 22px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+/* =========================
+   COMBO ITEMS
+========================= */
+
+.combo-items {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 24px;
+}
+
+.combo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 11px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.13);
+  font-size: 14px;
+}
+
+.combo-item span {
+  font-weight: 600;
+}
+
+.combo-item strong {
+  white-space: nowrap;
+  font-weight: 800;
+}
+
+/* =========================
+   COMBO PRICE
+========================= */
+
+.combo-pricing {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.combo-original-price {
+  font-size: 14px;
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.combo-price {
+  font-size: 29px;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.combo-save {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #e9f7e9;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   ADD COMBO BUTTON
+========================= */
+
+.combo-order-btn {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 13px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.combo-order-btn:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* =========================
+   COMBO TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+  .combo-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* =========================
+   COMBO MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .combo-section {
+    padding: 65px 14px;
+  }
+
+  .combo-hero {
+    margin-bottom: 35px;
+  }
+
+  .combo-highlight {
+    padding: 8px 14px;
+    margin-bottom: 14px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .combo-hero h2 {
+    font-size: 30px;
+    letter-spacing: -0.5px;
+  }
+
+  .combo-hero p {
+    margin: 10px 0 18px;
+    font-size: 13px;
+  }
+
+  .combo-view-btn {
+    padding: 10px 17px;
+    font-size: 11px;
+  }
+
+  .combo-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .combo-card {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .combo-type {
+    padding: 5px 8px;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .combo-card h3 {
+    margin: 12px 0 15px;
+    font-size: 17px;
+  }
+
+  .combo-items {
+    gap: 8px;
+    margin-bottom: 17px;
+  }
+
+  .combo-item {
+    gap: 7px;
+    padding-bottom: 8px;
+    font-size: 11px;
+  }
+
+  .combo-item strong {
+    font-size: 11px;
+  }
+
+  .combo-pricing {
+    gap: 6px;
+    margin-bottom: 15px;
+  }
+
+  .combo-original-price {
+    font-size: 10px;
+  }
+
+  .combo-price {
+    font-size: 20px;
+  }
+
+  .combo-save {
+    padding: 4px 6px;
+    font-size: 8px;
+  }
+
+  .combo-order-btn {
+    padding: 10px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+}
