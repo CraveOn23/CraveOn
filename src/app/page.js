@@ -228,12 +228,12 @@ const comboOffers = [
     icon:"☕🥪",
     image:"/combos/coffee-crunch.jpg.png",
     items:[
-      {name:"Classic Frappe",price:79},
-      {name:"Mix Veg Sandwich",price:99}
+      {name:"Classic Frappe",price:49},
+      {name:"Mix Veg Sandwich",price:59}
     ],
-    originalPrice:178,
-    comboPrice:159,
-    save:19,
+    originalPrice:108,
+    comboPrice:90,
+    save:18,
     type:"Budget Combo"
   },
 
@@ -242,12 +242,12 @@ const comboOffers = [
     icon:"☕🍜",
     image:"/combos/chill-fill.jpg.png",
     items:[
-      {name:"Classic Frappe",price:79},
-      {name:"Masala Maggi",price:69}
+      {name:"Classic Frappe",price:49},
+      {name:"Tandoori Maggi",price:69}
     ],
-    originalPrice:148,
-    comboPrice:129,
-    save:19,
+    originalPrice:118,
+    comboPrice:100,
+    save:18,
     type:"Budget Combo"
   },
 
@@ -256,13 +256,13 @@ const comboOffers = [
     icon:"☕🥪🍜",
     image:"/combos/cafe-meal.jpg.png",
     items:[
-      {name:"Classic Frappe",price:79},
-      {name:"Mix Veg Sandwich",price:99},
-      {name:"Masala Maggi",price:69}
+      {name:"Butterscotch Frappe",price:59},
+      {name:"Cheese Chilli Sandwich",price:69},
+      {name:"Masala Maggi",price:49}
     ],
-    originalPrice:247,
-    comboPrice:219,
-    save:28,
+    originalPrice:177,
+    comboPrice:159,
+    save:18,
     type:"Full Meal Combo"
   },
 
@@ -271,12 +271,12 @@ const comboOffers = [
     icon:"☕🍕",
     image:"/combos/pizza-chill.jpg.png",
     items:[
-      {name:"Classic Frappe",price:79},
-      {name:"Margherita Pizza",price:99}
+      {name:"Classic Frappe",price:49},
+      {name:"Margherita Pizza",price:69}
     ],
-    originalPrice:178,
-    comboPrice:159,
-    save:19,
+    originalPrice:118,
+    comboPrice:100,
+    save:18,
     type:"Budget Combo"
   },
 
@@ -285,12 +285,12 @@ const comboOffers = [
     icon:"🥤🥪",
     image:"/combos/shake-bite.jpg.png",
     items:[
-      {name:"Oreo Shake",price:99},
-      {name:"Mix Veg Sandwich",price:99}
+      {name:"Chocolate Shake",price:69},
+      {name:"Melted Cheese Sandwich",price:79}
     ],
-    originalPrice:198,
-    comboPrice:179,
-    save:19,
+    originalPrice:148,
+    comboPrice:130,
+    save:18,
     type:"Budget Combo"
   },
 
@@ -299,14 +299,14 @@ const comboOffers = [
     icon:"☕🥪🍜🥤",
     image:"/combos/ultimate-crave.jpg.png",
     items:[
-      {name:"Classic Frappe",price:79},
-      {name:"Mix Veg Sandwich",price:99},
-      {name:"Masala Maggi",price:69},
-      {name:"Virgin Mojito",price:69}
+      {name:"Classic Frappe",price:49},
+      {name:"Cheese Corn Sandwich",price:69},
+      {name:"Cheese Corn Maggi",price:69},
+      {name:"Green Apple Mojito",price:49}
     ],
-    originalPrice:316,
-    comboPrice:279,
-    save:37,
+    originalPrice:236,
+    comboPrice:210,
+    save:26,
     type:"Premium Combo"
   }
 ];
