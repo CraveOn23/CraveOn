@@ -97,19 +97,19 @@ const specialItems = {
 
 "Cold Coffee":[
 
-{name:"Classic Frappe",price:79},
+{name:"Classic Frappe",price:49},
 
-{name:"Irish Frappe",price:99},
+{name:"Irish Frappe",price:59},
 
-{name:"Hazelnut Frappe",price:99},
+{name:"Hazelnut Frappe",price:59},
 
-{name:"Butterscotch Frappe",price:99},
+{name:"Butterscotch Frappe",price:59},
 
-{name:"Caramel Frappe",price:99},
+{name:"Caramel Frappe",price:69},
 
-{name:"Kit-Kat Frappe",price:99},
+{name:"Kit-Kat Frappe",price:69},
 
-{name:"Tiramisu Frappe",price:110},
+{name:"Tiramisu Frappe",price:79},
 
 ],
 
@@ -117,25 +117,25 @@ const specialItems = {
 
 "Shakes":[
 
-{name:"Vanilla Shake",price:69},
+{name:"Vanilla Shake",price:49},
 
-{name:"Paan Shake",price:89},
+{name:"Paan Shake",price:59},
 
-{name:"Oreo Shake",price:99},
+{name:"Oreo Shake",price:59},
 
-{name:"Kit-Kat Shake",price:99},
+{name:"Kit-Kat Shake",price:69},
 
-{name:"Passion Fruit Shake",price:99},
+{name:"Passion Fruit Shake",price:69},
 
-{name:"Bubblegum Shake",price:99},
+{name:"Bubblegum Shake",price:69},
 
-{name:"Chocolate Shake",price:110},
+{name:"Chocolate Shake",price:69},
 
-{name:"Blueberry Shake",price:120},
+{name:"Blueberry Shake",price:79},
 
-{name:"Brownie Shake",price:120},
+{name:"Brownie Shake",price:89},
 
-{name:"Strawberry Shake",price:120},
+{name:"Strawberry Shake",price:89},
 
 ],
 
@@ -143,17 +143,17 @@ const specialItems = {
 
 "Maggi":[
 
-{name:"Plain Maggi",price:59},
+{name:"Plain Maggi",price:39},
 
-{name:"Masala Maggi",price:69},
+{name:"Masala Maggi",price:49},
 
-{name:"Cheese Maggi",price:79},
+{name:"Cheese Maggi",price:59},
 
-{name:"Cheese Corn Maggi",price:89},
+{name:"Cheese Corn Maggi",price:69},
 
-{name:"Tandoori Maggi",price:99},
+{name:"Tandoori Maggi",price:69},
 
-{name:"Peri Peri Maggi",price:99},
+{name:"Peri Peri Maggi",price:69},
 
 ],
 
@@ -162,21 +162,21 @@ const specialItems = {
 
 "Sandwich":[
 
-{name:"Mix Veg. Sandwich",price:99},
+{name:"Mix Veg. Sandwich",price:59},
 
-{name:"Cheese Corn Sandwich",price:119},
+{name:"Cheese Corn Sandwich",price:69},
 
-{name:"Cheese Chilli Sandwich",price:119},
+{name:"Cheese Chilli Sandwich",price:69},
 
-{name:"Chilli Garlic Sandwich",price:119},
+{name:"Chilli Garlic Sandwich",price:69},
 
-{name:"Melted Cheese Sandwich",price:139},
+{name:"Melted Cheese Sandwich",price:79},
 
-{name:"Tandoori Paneer Sandwich",price:139},
+{name:"Tandoori Paneer Sandwich",price:89},
 
-{name:"Peri Peri Paneer Sandwich",price:139},
+{name:"Peri Peri Paneer Sandwich",price:99},
 
-{name:"Veg. Tandoori Paneer Sandwich",price:159},
+{name:"Veg. Tandoori Paneer Sandwich",price:110},
 
 ],
 
@@ -185,32 +185,32 @@ const specialItems = {
 
 "Mocktails":[
 
-{name:"Virgin Mojito",price:69},
+{name:"Virgin Mojito",price:39},
 
-{name:"Blue Lagoon",price:79},
+{name:"Blue Lagoon",price:49},
 
-{name:"Green Apple Mojito",price:79},
+{name:"Green Apple Mojito",price:49},
 
-{name:"Orange Burst Mojito",price:89},
+{name:"Orange Burst Mojito",price:49},
 
-{name:"Berry Mojito",price:89},
+{name:"Berry Mojito",price:59},
 
-{name:"Melomania Mojito",price:99},
+{name:"Melomania Mojito",price:59},
 
-{name:"Watermelon Lychee Blast",price:110},
+{name:"Watermelon Lychee Blast",price:59},
 
 ],
 
 "Pizza": [
-  { name: "Margherita Pizza", price: 99 },
+  { name: "Margherita Pizza", price: 69 },
 
-  { name: "Cheese Corn Pizza", price: 129 },
+  { name: "Cheese Corn Pizza", price: 79 },
 
-  { name: "Veggie Pizza", price: 139 },
+  { name: "Veggie Pizza", price: 89 },
 
-  { name: "Paneer Tikka Pizza", price: 159 },
+  { name: "Paneer Tikka Pizza", price: 110 },
 
-  { name: "Farmhouse Pizza", price: 169 }
+  { name: "Farmhouse Pizza", price: 129 }
 
 ],
 
